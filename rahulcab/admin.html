@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rahul Cabs - Admin Panel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .1);
+        }
+
+        .login-box h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .login-box p {
+            text-align: center;
+            color: #64748b;
+        }
+
+        .input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 13px;
+            border: 0;
+            border-radius: 8px;
+            background: #1d4ed8;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .error {
+            color: #dc2626;
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .admin-page {
+            display: none;
+        }
+
+        .admin-header {
+            background: #0f172a;
+            color: white;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logout-btn {
+            background: #dc2626;
+            color: white;
+            border: 0;
+            padding: 10px 15px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .stat {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+        }
+
+        .stat h3 {
+            font-size: 30px;
+            margin: 8px 0;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            overflow-x: auto;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f8fafc;
+        }
+
+        .status {
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .confirmed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .completed {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .cancelled {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-select {
+            padding: 7px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+
+        @media (max-width: 800px) {
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .admin-header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- LOGIN -->
+
+    <div class="login-page" id="loginPage">
+
+        <div class="login-box">
+
+            <h1>
+                <i class="fa-solid fa-car"></i>
+                Rahul Cabs
+            </h1>
+
+            <p>
+                Admin Login
+            </p>
+
+
+            <form id="loginForm">
+
+                <input class="input" type="email" id="adminEmail" placeholder="Admin Email" required>
+
+                <input class="input" type="password" id="adminPassword" placeholder="Password" required>
+
+                <button class="btn" type="submit">
+                    Login
+                </button>
+
+                <div id="loginError" class="error"></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADMIN DASHBOARD -->
+
+    <div class="admin-page" id="adminPage">
+
+        <header class="admin-header">
+
+            <h2>
+                <i class="fa-solid fa-gauge"></i>
+                Rahul Cabs Admin
+            </h2>
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </header>
+
+
+        <main class="dashboard">
+
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <small>
+                        Total Bookings
+                    </small>
+
+                    <h3 id="totalBookings">
+                        0
+                    </h3>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <small>
+                        Pending
+                    </small>
+
+                    <h3 id="pendingBookings">
+                        0
+                    </h3>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <small>
+                        Confirmed
+                    </small>
+
+                    <h3 id="confirmedBookings">
+                        0
+                    </h3>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <small>
+                        Completed
+                    </small>
+
+                    <h3 id="completedBookings">
+                        0
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <h2>
+                All Bookings
+            </h2>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Phone</th>
+                            <th>Trip</th>
+                            <th>Route</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Vehicle</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="bookingTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        const loginPage =
+            document.getElementById("loginPage");
+
+        const adminPage =
+            document.getElementById("adminPage");
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginError =
+            document.getElementById("loginError");
+
+
+        // ================= CHECK LOGIN =================
+
+        async function checkLogin() {
+
+            const response =
+                await fetch("/api/admin/me");
+
+            if (response.ok) {
+
+                showDashboard();
+
+            }
+
+        }
+
+
+        function showDashboard() {
+
+            loginPage.style.display = "none";
+            adminPage.style.display = "block";
+
+            loadBookings();
+
+        }
+
+
+        // ================= LOGIN =================
+
+        loginForm.addEventListener(
+            "submit",
+            async event => {
+
+                event.preventDefault();
+
+                loginError.textContent = "";
+
+                const email =
+                    document.getElementById("adminEmail").value;
+
+                const password =
+                    document.getElementById("adminPassword").value;
+
+
+                try {
+
+                    const response =
+                        await fetch("/api/admin/login", {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                email,
+                                password
+                            })
+
+                        });
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            result.message || "Login failed"
+                        );
+
+                    }
+
+
+                    showDashboard();
+
+
+                } catch (error) {
+
+                    loginError.textContent =
+                        error.message;
+
+                }
+
+            }
+        );
+
+
+        // ================= LOAD BOOKINGS =================
+
+        async function loadBookings() {
+
+            const response =
+                await fetch("/api/admin/bookings");
+
+
+            if (response.status === 401) {
+
+                location.reload();
+
+                return;
+
+            }
+
+
+            const bookings =
+                await response.json();
+
+
+            document.getElementById(
+                "totalBookings"
+            ).textContent = bookings.length;
+
+
+            document.getElementById(
+                "pendingBookings"
+            ).textContent =
+                bookings.filter(
+                    b => b.status === "Pending"
+                ).length;
+
+
+            document.getElementById(
+                "confirmedBookings"
+            ).textContent =
+                bookings.filter(
+                    b => b.status === "Confirmed"
+                ).length;
+
+
+            document.getElementById(
+                "completedBookings"
+            ).textContent =
+                bookings.filter(
+                    b => b.status === "Completed"
+                ).length;
+
+
+            const table =
+                document.getElementById("bookingTable");
+
+
+            table.innerHTML = "";
+
+
+            bookings.forEach(booking => {
+
+                const row =
+                    document.createElement("tr");
+
+
+                row.innerHTML = `
+
+        <td>#${booking.id}</td>
+
+        <td>
+          ${escapeHTML(booking.customer_name)}
+        </td>
+
+        <td>
+          <a href="tel:${booking.customer_phone}">
+            ${escapeHTML(booking.customer_phone)}
+          </a>
+        </td>
+
+        <td>
+          ${escapeHTML(booking.trip_type)}
+        </td>
+
+        <td>
+          ${escapeHTML(booking.pickup_city)}
+          →
+          ${escapeHTML(booking.drop_city)}
+        </td>
+
+        <td>
+          ${escapeHTML(booking.pickup_date)}
+        </td>
+
+        <td>
+          ${escapeHTML(booking.pickup_time)}
+        </td>
+
+        <td>
+          ${escapeHTML(booking.vehicle)}
+        </td>
+
+        <td>
+
+          <select
+            class="status-select"
+            onchange="updateStatus(${booking.id}, this.value)"
+          >
+
+            <option
+              ${booking.status === "Pending" ? "selected" : ""}
+            >
+              Pending
+            </option>
+
+            <option
+              ${booking.status === "Confirmed" ? "selected" : ""}
+            >
+              Confirmed
+            </option>
+
+            <option
+              ${booking.status === "Completed" ? "selected" : ""}
+            >
+              Completed
+            </option>
+
+            <option
+              ${booking.status === "Cancelled" ? "selected" : ""}
+            >
+              Cancelled
+            </option>
+
+          </select>
+
+        </td>
+
+      `;
+
+
+                table.appendChild(row);
+
+            });
+
+        }
+
+
+        // ================= STATUS =================
+
+        async function updateStatus(id, status) {
+
+            await fetch(
+                `/api/admin/bookings/${id}`,
+                {
+
+                    method: "PATCH",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        status
+                    })
+
+                }
+            );
+
+            loadBookings();
+
+        }
+
+
+        // ================= LOGOUT =================
+
+        document
+            .getElementById("logoutBtn")
+            .addEventListener("click", async () => {
+
+                await fetch(
+                    "/api/admin/logout",
+                    {
+                        method: "POST"
+                    }
+                );
+
+                location.reload();
+
+            });
+
+
+        function escapeHTML(value) {
+
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        checkLogin();
+
+    </script>
+
+</body>
+
+</html>
