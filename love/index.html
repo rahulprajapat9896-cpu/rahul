@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Tannu ❤️</title>
+
+    <style>
+        /* =====================================================
+   RESET
+===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+
+            font-family:
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(circle at 15% 20%,
+                    rgba(255, 255, 255, .18),
+                    transparent 25%),
+                radial-gradient(circle at 85% 80%,
+                    rgba(255, 150, 220, .2),
+                    transparent 30%),
+                linear-gradient(135deg,
+                    #ff758f,
+                    #d6336c,
+                    #7b2cbf);
+
+            color: white;
+        }
+
+
+        /* =====================================================
+   LOADING / INTRO
+===================================================== */
+
+        #introPage {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 25px;
+
+            background:
+                radial-gradient(circle,
+                    #ffb3c6,
+                    #d6336c 45%,
+                    #5a189a);
+
+            transition:
+                opacity 1s ease,
+                visibility 1s ease;
+        }
+
+        #introPage.hide {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+        }
+
+        .intro-heart {
+
+            font-size: 110px;
+
+            animation:
+                heartbeat 1.2s infinite;
+
+            filter:
+                drop-shadow(0 0 30px rgba(255, 255, 255, .8));
+        }
+
+        .intro-small {
+
+            margin-top: 20px;
+
+            font-size: 15px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            opacity: .9;
+        }
+
+        .intro-title {
+
+            margin-top: 15px;
+
+            font-size: 48px;
+
+            text-shadow:
+                0 5px 25px rgba(0, 0, 0, .25);
+        }
+
+        .intro-title span {
+
+            color: #ffe5ec;
+
+            text-shadow:
+                0 0 20px #fff,
+                0 0 40px #ffb3c6;
+        }
+
+        .start-btn {
+
+            margin-top: 35px;
+
+            padding: 16px 38px;
+
+            border: 0;
+
+            border-radius: 50px;
+
+            background: white;
+
+            color: #c9184a;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 35px rgba(255, 255, 255, .35);
+
+            transition: .3s;
+        }
+
+        .start-btn:hover {
+
+            transform: scale(1.08);
+        }
+
+
+        /* =====================================================
+   COUNTDOWN
+===================================================== */
+
+        #countdown {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 900;
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                linear-gradient(135deg,
+                    #ff4d6d,
+                    #7209b7);
+
+            font-size: 130px;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 0 40px white;
+        }
+
+        .count-animation {
+
+            animation:
+                countPop .8s ease;
+        }
+
+        @keyframes countPop {
+
+            0% {
+                transform: scale(.2);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* =====================================================
+   MAIN BACKGROUND
+===================================================== */
+
+        #mainSite {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+        }
+
+
+        /* =====================================================
+   CARD
+===================================================== */
+
+        .card {
+
+            width: 100%;
+
+            max-width: 550px;
+
+            min-height: 600px;
+
+            padding: 40px 28px;
+
+            border-radius: 38px;
+
+            background:
+                rgba(255, 255, 255, .14);
+
+            border:
+                1px solid rgba(255, 255, 255, .35);
+
+            backdrop-filter:
+                blur(25px);
+
+            -webkit-backdrop-filter:
+                blur(25px);
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, .35),
+
+                inset 0 0 35px rgba(255, 255, 255, .08);
+
+            display: none;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 10;
+
+            animation:
+                pageIn .6s ease;
+        }
+
+        .card.active {
+
+            display: flex;
+        }
+
+        @keyframes pageIn {
+
+            from {
+                opacity: 0;
+                transform:
+                    scale(.9) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    scale(1) translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+   TEXT
+===================================================== */
+
+        .small-text {
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            opacity: .85;
+
+            margin-bottom: 15px;
+        }
+
+        h1 {
+
+            font-size: 38px;
+
+            line-height: 1.2;
+
+            margin-bottom: 15px;
+
+            text-shadow:
+                0 4px 18px rgba(0, 0, 0, .2);
+        }
+
+        .tannu {
+
+            font-size: 48px;
+
+            color: #fff1f5;
+
+            text-shadow:
+                0 0 15px #fff,
+                0 0 30px #ffb3c6,
+                0 0 50px #ff4d6d;
+        }
+
+        .message {
+
+            max-width: 450px;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 25px;
+
+            color:
+                rgba(255, 255, 255, .95);
+        }
+
+
+        /* =====================================================
+   HEART
+===================================================== */
+
+        .big-heart {
+
+            font-size: 95px;
+
+            margin-bottom: 20px;
+
+            animation:
+                heartbeat 1.2s infinite;
+
+            filter:
+                drop-shadow(0 0 20px rgba(255, 255, 255, .7));
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+
+        /* =====================================================
+   BUTTONS
+===================================================== */
+
+        .button-row {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 18px;
+
+            width: 100%;
+        }
+
+        button {
+
+            border: 0;
+
+            border-radius: 50px;
+
+            padding: 14px 30px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .yes-btn {
+
+            background: white;
+
+            color: #c9184a;
+
+            box-shadow:
+                0 10px 30px rgba(255, 255, 255, .3);
+        }
+
+        .yes-btn:hover {
+
+            transform: scale(1.1);
+        }
+
+        .no-btn {
+
+            background:
+                rgba(255, 255, 255, .15);
+
+            color: white;
+
+            border:
+                1px solid rgba(255, 255, 255, .4);
+        }
+
+        .next-btn {
+
+            background: white;
+
+            color: #c9184a;
+
+            margin-top: 10px;
+
+            box-shadow:
+                0 10px 30px rgba(255, 255, 255, .25);
+        }
+
+
+        /* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+        .music-btn {
+
+            position: fixed;
+
+            right: 18px;
+
+            top: 18px;
+
+            z-index: 500;
+
+            width: 50px;
+
+            height: 50px;
+
+            padding: 0;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, .2);
+
+            color: white;
+
+            border:
+                1px solid rgba(255, 255, 255, .4);
+
+            backdrop-filter: blur(10px);
+
+            font-size: 20px;
+        }
+
+
+        /* =====================================================
+   OPTIONS
+===================================================== */
+
+        .option-list {
+
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 13px;
+
+            margin-top: 10px;
+        }
+
+        .option {
+
+            width: 100%;
+
+            padding: 18px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255, 255, 255, .14);
+
+            border:
+                1px solid rgba(255, 255, 255, .3);
+
+            cursor: pointer;
+
+            transition: .3s;
+
+            font-size: 17px;
+        }
+
+        .option:hover {
+
+            transform:
+                scale(1.03) translateY(-2px);
+
+            background:
+                rgba(255, 255, 255, .25);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, .15);
+        }
+
+
+        /* =====================================================
+   MEMORY
+===================================================== */
+
+        .memory-grid {
+
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin: 18px 0;
+        }
+
+        .memory {
+
+            min-height: 110px;
+
+            border-radius: 20px;
+
+            padding: 15px;
+
+            background:
+                rgba(255, 255, 255, .14);
+
+            border:
+                1px solid rgba(255, 255, 255, .25);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .memory-icon {
+
+            font-size: 38px;
+
+            margin-bottom: 8px;
+        }
+
+        .memory strong {
+
+            font-size: 15px;
+        }
+
+        .memory span {
+
+            font-size: 12px;
+
+            opacity: .8;
+
+            margin-top: 5px;
+        }
+
+
+        /* =====================================================
+   LOVE LETTER
+===================================================== */
+
+        .letter {
+
+            width: 100%;
+
+            padding: 25px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(255, 255, 255, .2),
+                    rgba(255, 255, 255, .08));
+
+            border:
+                1px solid rgba(255, 255, 255, .3);
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+            margin: 15px 0;
+        }
+
+
+        /* =====================================================
+   FOREVER
+===================================================== */
+
+        .ring {
+
+            font-size: 90px;
+
+            animation:
+                ringFloat 2s infinite ease-in-out;
+        }
+
+        @keyframes ringFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .forever-buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 20px;
+        }
+
+        .forever-yes {
+
+            background: #fff;
+
+            color: #c9184a;
+        }
+
+        .maybe-btn {
+
+            background:
+                rgba(255, 255, 255, .2);
+
+            color: white;
+        }
+
+
+        /* =====================================================
+   POPUP
+===================================================== */
+
+        .popup {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 10000;
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            background:
+                rgba(0, 0, 0, .65);
+        }
+
+        .popup.show {
+
+            display: flex;
+        }
+
+        .popup-box {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            padding: 35px 25px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(135deg,
+                    white,
+                    #ffe5ec);
+
+            color: #c9184a;
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, .5);
+
+            animation:
+                popupIn .4s ease;
+        }
+
+        @keyframes popupIn {
+
+            from {
+                transform: scale(.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .popup-box h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .popup-box p {
+
+            color: #555;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+
+            background: #c9184a;
+
+            color: white;
+        }
+
+
+        /* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+        .floating-heart {
+
+            position: fixed;
+
+            bottom: -50px;
+
+            z-index: 2;
+
+            pointer-events: none;
+
+            animation:
+                floatHeart linear forwards;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform:
+                    translateY(0) rotate(0deg) scale(.7);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-115vh) rotate(360deg) scale(1.2);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+   SPARKLES
+===================================================== */
+
+        .sparkle {
+
+            position: fixed;
+
+            width: 4px;
+
+            height: 4px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            box-shadow:
+                0 0 15px white;
+
+            pointer-events: none;
+
+            z-index: 1;
+
+            animation:
+                sparkle 2s infinite alternate;
+        }
+
+        @keyframes sparkle {
+
+            from {
+                opacity: .2;
+                transform: scale(.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+
+        /* =====================================================
+   MOBILE
+===================================================== */
+
+        @media(max-width:600px) {
+
+            #mainSite {
+                padding: 15px;
+            }
+
+            .card {
+
+                min-height: 600px;
+
+                padding:
+                    30px 20px;
+
+                border-radius: 30px;
+            }
+
+            .intro-title {
+                font-size: 38px;
+            }
+
+            .intro-heart {
+                font-size: 85px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+
+            .tannu {
+                font-size: 40px;
+            }
+
+            .big-heart {
+                font-size: 75px;
+            }
+
+            .message {
+                font-size: 15px;
+            }
+
+            button {
+                padding:
+                    13px 23px;
+
+                font-size: 15px;
+            }
+
+            .option {
+                padding: 15px;
+
+                font-size: 15px;
+            }
+
+            .memory-grid {
+                gap: 8px;
+            }
+
+            .memory {
+                min-height: 100px;
+            }
+
+            .forever-buttons {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     INTRO
+===================================================== -->
+
+    <div id="introPage">
+
+        <div class="intro-heart">
+            ❤️
+        </div>
+
+        <div class="intro-small">
+            I made something special for
+        </div>
+
+        <div class="intro-title">
+            <span>Tannu</span> 💕
+        </div>
+
+        <button class="start-btn" id="startBtn">
+            Open Your Surprise ✨
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+     COUNTDOWN
+===================================================== -->
+
+    <div id="countdown">
+        3
+    </div>
+
+
+    <!-- =====================================================
+     MUSIC BUTTON
+===================================================== -->
+
+    <button class="music-btn" id="musicBtn" title="Music">
+        🎵
+    </button>
+
+
+    <!-- =====================================================
+     MAIN SITE
+===================================================== -->
+
+    <main id="mainSite">
+
+
+        <!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+        <section class="card active" id="questionPage">
+
+            <div class="small-text">
+                A very important question...
+            </div>
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <h1>
+                Hey Tannu...
+            </h1>
+
+            <p class="message">
+
+                I could have simply asked you...
+
+                <br>
+
+                But where's the fun in that? 😏
+
+                <br><br>
+
+                So here is the most important
+                question of this little website...
+
+            </p>
+
+            <h1 class="tannu">
+                Do You Love Me?
+            </h1>
+
+            <div class="button-row">
+
+                <button class="yes-btn" id="yesBtn">
+                    YES ❤️
+                </button>
+
+                <button class="no-btn" id="noBtn">
+                    NO 😜
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+     PAGE 2
+===================================================== -->
+
+        <section class="card" id="lovePage">
+
+            <div class="small-text">
+                I knew it! 🥰
+            </div>
+
+            <div class="big-heart">
+                💖
+            </div>
+
+            <h1>
+                Tannu said YES!
+            </h1>
+
+            <p class="message" id="typingText">
+            </p>
+
+            <button class="next-btn" id="continueBtn">
+                There's More... 💌
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================================
+     PAGE 3 - CHOICES
+===================================================== -->
+
+        <section class="card" id="choicePage">
+
+            <div class="big-heart">
+                💕
+            </div>
+
+            <h1>
+                Tannu, choose one ❤️
+            </h1>
+
+            <p class="message">
+                I made three little surprises
+                just for you...
+            </p>
+
+            <div class="option-list">
+
+                <div class="option" id="specialOption">
+                    💕 Why You're Special
+                </div>
+
+                <div class="option" id="storyOption">
+                    🌸 Our Little Story
+                </div>
+
+                <div class="option" id="letterOption">
+                    💌 A Letter For You
+                </div>
+
+                <div class="option" id="foreverOption">
+                    💍 One Last Question...
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+     PAGE 4 - SPECIAL
+===================================================== -->
+
+        <section class="card" id="specialPage">
+
+            <div class="big-heart">
+                💕
+            </div>
+
+            <h1>
+                Why You're Special
+            </h1>
+
+            <div class="letter">
+
+                You have a way of making
+                ordinary moments feel special. ✨
+
+                <br><br>
+
+                Your smile can make a bad day
+                feel a little better.
+
+                <br><br>
+
+                Your presence makes things
+                more fun.
+
+                <br><br>
+
+                And the best part?
+
+                <br>
+
+                <strong>
+                    You're simply Tannu. ❤️
+                </strong>
+
+            </div>
+
+            <button class="next-btn backBtn">
+                ← Back
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================================
+     PAGE 5 - STORY
+===================================================== -->
+
+        <section class="card" id="storyPage">
+
+            <div class="small-text">
+                Our imaginary little story ✨
+            </div>
+
+            <h1>
+                Our Little Story 🌸
+            </h1>
+
+            <p class="message">
+                Every beautiful story starts
+                somewhere...
+            </p>
+
+            <div class="memory-grid">
+
+                <div class="memory">
+
+                    <div class="memory-icon">
+                        🌱
+                    </div>
+
+                    <strong>
+                        Beginning
+                    </strong>
+
+                    <span>
+                        It all started somewhere...
+                    </span>
+
+                </div>
+
+
+                <div class="memory">
+
+                    <div class="memory-icon">
+                        😊
+                    </div>
+
+                    <strong>
+                        Smiles
+                    </strong>
+
+                    <span>
+                        Then came the smiles.
+                    </span>
+
+                </div>
+
+
+                <div class="memory">
+
+                    <div class="memory-icon">
+                        💕
+                    </div>
+
+                    <strong>
+                        Feelings
+                    </strong>
+
+                    <span>
+                        Somewhere along the way...
+                    </span>
+
+                </div>
+
+
+                <div class="memory">
+
+                    <div class="memory-icon">
+                        ✨
+                    </div>
+
+                    <strong>
+                        Today
+                    </strong>
+
+                    <span>
+                        Here we are.
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button class="next-btn backBtn">
+                ← Back
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================================
+     PAGE 6 - LETTER
+===================================================== -->
+
+        <section class="card" id="letterPage">
+
+            <div class="big-heart">
+                💌
+            </div>
+
+            <h1>
+                Dear Tannu...
+            </h1>
+
+            <div class="letter">
+
+                I don't know where life takes us,
+                but I'm glad our paths crossed. ❤️
+
+                <br><br>
+
+                There are people who make you
+                laugh...
+
+                <br>
+
+                people who make you smile...
+
+                <br>
+
+                and then there are people who
+                somehow become a little piece
+                of your heart.
+
+                <br><br>
+
+                For me...
+
+                <br>
+
+                <strong>
+                    that's you. ❤️
+                </strong>
+
+                <br><br>
+
+                Never forget how special you are. ✨
+
+            </div>
+
+            <button class="next-btn backBtn">
+                ← Back
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================================
+     PAGE 7 - FOREVER
+===================================================== -->
+
+        <section class="card" id="foreverPage">
+
+            <div class="ring">
+                💍
+            </div>
+
+            <h1>
+                One Last Question...
+            </h1>
+
+            <p class="message">
+
+                Tannu...
+
+                <br><br>
+
+                If you had to choose one person
+                to keep annoying you,
+                making you laugh,
+                listening to your nonsense,
+                and being there for you...
+
+                <br><br>
+
+                Would you choose me? ❤️
+
+            </p>
+
+            <div class="forever-buttons">
+
+                <button class="forever-yes" id="foreverYes">
+                    Of Course ❤️
+                </button>
+
+                <button class="maybe-btn" id="maybeBtn">
+                    Maybe 😜
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+     POPUP
+===================================================== -->
+
+    <div class="popup" id="popup">
+
+        <div class="popup-box">
+
+            <h2 id="popupTitle">
+                ❤️
+            </h2>
+
+            <p id="popupText">
+            </p>
+
+            <button class="close-btn" id="closePopup">
+                Aww... ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     OPTIONAL MUSIC
+=====================================================
+
+     To add your own music:
+     1. Put music.mp3 in the same folder.
+     2. Uncomment the audio below.
+
+===================================================== -->
+
+    <audio id="music" loop>
+
+        <!--
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+    -->
+
+    </audio>
+
+
+    <script>
+
+
+        /* =====================================================
+           ELEMENTS
+        ===================================================== */
+
+        const introPage =
+            document.getElementById(
+                "introPage"
+            );
+
+        const startBtn =
+            document.getElementById(
+                "startBtn"
+            );
+
+        const countdown =
+            document.getElementById(
+                "countdown"
+            );
+
+        const music =
+            document.getElementById(
+                "music"
+            );
+
+        const musicBtn =
+            document.getElementById(
+                "musicBtn"
+            );
+
+
+        const questionPage =
+            document.getElementById(
+                "questionPage"
+            );
+
+        const lovePage =
+            document.getElementById(
+                "lovePage"
+            );
+
+        const choicePage =
+            document.getElementById(
+                "choicePage"
+            );
+
+        const specialPage =
+            document.getElementById(
+                "specialPage"
+            );
+
+        const storyPage =
+            document.getElementById(
+                "storyPage"
+            );
+
+        const letterPage =
+            document.getElementById(
+                "letterPage"
+            );
+
+        const foreverPage =
+            document.getElementById(
+                "foreverPage"
+            );
+
+
+        const yesBtn =
+            document.getElementById(
+                "yesBtn"
+            );
+
+        const noBtn =
+            document.getElementById(
+                "noBtn"
+            );
+
+        const continueBtn =
+            document.getElementById(
+                "continueBtn"
+            );
+
+        const maybeBtn =
+            document.getElementById(
+                "maybeBtn"
+            );
+
+
+        /* =====================================================
+           START EXPERIENCE
+        ===================================================== */
+
+        startBtn.addEventListener(
+            "click",
+            function () {
+
+                introPage.classList.add(
+                    "hide"
+                );
+
+                startCountdown();
+
+            }
+        );
+
+
+        /* =====================================================
+           COUNTDOWN
+        ===================================================== */
+
+        function startCountdown() {
+
+            countdown.style.display =
+                "flex";
+
+            let number = 3;
+
+            countdown.innerText =
+                number;
+
+            countdown.classList.add(
+                "count-animation"
+            );
+
+
+            const timer =
+                setInterval(
+                    function () {
+
+                        number--;
+
+                        if (number > 0) {
+
+                            countdown.innerText =
+                                number;
+
+                            countdown.classList.remove(
+                                "count-animation"
+                            );
+
+                            void countdown.offsetWidth;
+
+                            countdown.classList.add(
+                                "count-animation"
+                            );
+
+                        }
+
+                        else {
+
+                            clearInterval(timer);
+
+                            countdown.innerText =
+                                "❤️";
+
+                            setTimeout(
+                                function () {
+
+                                    countdown.style.display =
+                                        "none";
+
+                                },
+                                700
+                            );
+
+                            heartExplosion();
+
+                        }
+
+                    },
+                    900
+                );
+        }
+
+
+        /* =====================================================
+           SHOW PAGE
+        ===================================================== */
+
+        function showPage(page) {
+
+            document
+                .querySelectorAll(".card")
+                .forEach(
+                    function (card) {
+
+                        card.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            page.classList.add(
+                "active"
+            );
+
+        }
+
+
+        /* =====================================================
+           YES
+        ===================================================== */
+
+        yesBtn.addEventListener(
+            "click",
+            function () {
+
+                showPage(
+                    lovePage
+                );
+
+                startTyping();
+
+                heartExplosion();
+
+            }
+        );
+
+
+        /* =====================================================
+           FIRST NO - RUN AWAY
+        ===================================================== */
+
+        function runNoButton() {
+
+            const width =
+                noBtn.offsetWidth;
+
+            const height =
+                noBtn.offsetHeight;
+
+
+            const maxX =
+                window.innerWidth -
+                width -
+                20;
+
+            const maxY =
+                window.innerHeight -
+                height -
+                20;
+
+
+            noBtn.style.position =
+                "fixed";
+
+
+            noBtn.style.left =
+                Math.max(
+                    10,
+                    Math.random() * maxX
+                ) + "px";
+
+
+            noBtn.style.top =
+                Math.max(
+                    10,
+                    Math.random() * maxY
+                ) + "px";
+
+
+            const texts = [
+
+                "NO 😜",
+                "Catch me 😂",
+                "Try again 😝",
+                "Really? 🥺",
+                "Nope ❤️",
+                "Too slow 🏃",
+                "Think again 😏",
+                "Tannu please 🥺",
+                "YES is better ❤️"
+
+            ];
+
+
+            noBtn.innerText =
+                texts[
+                Math.floor(
+                    Math.random() *
+                    texts.length
+                )
+                ];
+
+        }
+
+
+        noBtn.addEventListener(
+            "mouseenter",
+            runNoButton
+        );
+
+
+        noBtn.addEventListener(
+            "touchstart",
+            function (e) {
+
+                e.preventDefault();
+
+                runNoButton();
+
+            }
+        );
+
+
+        noBtn.addEventListener(
+            "click",
+            function (e) {
+
+                e.preventDefault();
+
+                runNoButton();
+
+            }
+        );
+
+
+        /* =====================================================
+           TYPING
+        ===================================================== */
+
+        function startTyping() {
+
+            const text =
+
+                "Tannu, you just made me smile. ❤️ " +
+
+                "You are genuinely one of the most " +
+
+                "special people in my life. " +
+
+                "Some people enter your life quietly " +
+
+                "and somehow become a beautiful " +
+
+                "part of your story. ✨";
+
+
+            let index = 0;
+
+            const element =
+                document.getElementById(
+                    "typingText"
+                );
+
+            element.innerHTML = "";
+
+
+            function type() {
+
+                if (index < text.length) {
+
+                    element.innerHTML +=
+                        text.charAt(index);
+
+                    index++;
+
+                    setTimeout(
+                        type,
+                        28
+                    );
+
+                }
+
+            }
+
+            type();
+
+        }
+
+
+        /* =====================================================
+           CONTINUE
+        ===================================================== */
+
+        continueBtn.addEventListener(
+            "click",
+            function () {
+
+                showPage(
+                    choicePage
+                );
+
+                heartExplosion();
+
+            }
+        );
+
+
+        /* =====================================================
+           OPTIONS
+        ===================================================== */
+
+        document
+            .getElementById("specialOption")
+            .addEventListener(
+                "click",
+                function () {
+
+                    showPage(
+                        specialPage
+                    );
+
+                }
+            );
+
+
+        document
+            .getElementById("storyOption")
+            .addEventListener(
+                "click",
+                function () {
+
+                    showPage(
+                        storyPage
+                    );
+
+                }
+            );
+
+
+        document
+            .getElementById("letterOption")
+            .addEventListener(
+                "click",
+                function () {
+
+                    showPage(
+                        letterPage
+                    );
+
+                }
+            );
+
+
+        document
+            .getElementById("foreverOption")
+            .addEventListener(
+                "click",
+                function () {
+
+                    showPage(
+                        foreverPage
+                    );
+
+                    heartExplosion();
+
+                }
+            );
+
+
+        /* =====================================================
+           BACK BUTTONS
+        ===================================================== */
+
+        document
+            .querySelectorAll(".backBtn")
+            .forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            showPage(
+                                choicePage
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           FOREVER YES
+        ===================================================== */
+
+        document
+            .getElementById("foreverYes")
+            .addEventListener(
+                "click",
+                function () {
+
+                    showPopup(
+
+                        "You just made my heart happy! ❤️",
+
+                        "Okay Tannu... it's officially decided. " +
+                        "You are stuck with me now. 😂💕 " +
+                        "No returns, no exchanges! 😜❤️"
+
+                    );
+
+                    heartExplosion();
+
+                }
+            );
+
+
+        /* =====================================================
+           FOREVER MAYBE - RUNNING
+        ===================================================== */
+
+        function runMaybe() {
+
+            const width =
+                maybeBtn.offsetWidth;
+
+            const height =
+                maybeBtn.offsetHeight;
+
+
+            const maxX =
+                window.innerWidth -
+                width -
+                15;
+
+            const maxY =
+                window.innerHeight -
+                height -
+                15;
+
+
+            maybeBtn.style.position =
+                "fixed";
+
+
+            maybeBtn.style.left =
+                Math.max(
+                    10,
+                    Math.random() * maxX
+                ) + "px";
+
+
+            maybeBtn.style.top =
+                Math.max(
+                    10,
+                    Math.random() * maxY
+                ) + "px";
+
+
+            const messages = [
+
+                "Maybe? 😜",
+                "Catch me! 😂",
+                "Nope! 😝",
+                "Try again ❤️",
+                "Too slow 🏃",
+                "Can't catch me 😎",
+                "Think again Tannu 🥺",
+                "Of Course ❤️",
+                "Wrong button 😂",
+                "I'm running! 🏃💨"
+
+            ];
+
+
+            maybeBtn.innerText =
+                messages[
+                Math.floor(
+                    Math.random() *
+                    messages.length
+                )
+                ];
+
+        }
+
+
+        maybeBtn.addEventListener(
+            "mouseenter",
+            runMaybe
+        );
+
+
+        maybeBtn.addEventListener(
+            "touchstart",
+            function (e) {
+
+                e.preventDefault();
+
+                runMaybe();
+
+            }
+        );
+
+
+        maybeBtn.addEventListener(
+            "click",
+            function (e) {
+
+                e.preventDefault();
+
+                runMaybe();
+
+            }
+        );
+
+
+        /* =====================================================
+           POPUP
+        ===================================================== */
+
+        function showPopup(
+            title,
+            message
+        ) {
+
+            document.getElementById(
+                "popupTitle"
+            ).innerText =
+                title;
+
+
+            document.getElementById(
+                "popupText"
+            ).innerText =
+                message;
+
+
+            document.getElementById(
+                "popup"
+            ).classList.add(
+                "show"
+            );
+
+        }
+
+
+        document
+            .getElementById("closePopup")
+            .addEventListener(
+                "click",
+                function () {
+
+                    document.getElementById(
+                        "popup"
+                    ).classList.remove(
+                        "show"
+                    );
+
+                }
+            );
+
+
+        /* =====================================================
+           FLOATING HEARTS
+        ===================================================== */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+
+            heart.className =
+                "floating-heart";
+
+
+            const emojis = [
+
+                "❤️",
+                "💕",
+                "💖",
+                "💗",
+                "💓",
+                "💘",
+                "💝",
+                "🥰",
+                "✨"
+
+            ];
+
+
+            heart.innerText =
+                emojis[
+                Math.floor(
+                    Math.random() *
+                    emojis.length
+                )
+                ];
+
+
+            heart.style.left =
+                Math.random() * 100 +
+                "vw";
+
+
+            heart.style.fontSize =
+                15 +
+                Math.random() * 30 +
+                "px";
+
+
+            heart.style.animationDuration =
+                4 +
+                Math.random() * 6 +
+                "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(
+                function () {
+
+                    heart.remove();
+
+                },
+                10000
+            );
+
+        }
+
+
+        /* =====================================================
+           HEART EXPLOSION
+        ===================================================== */
+
+        function heartExplosion() {
+
+            for (
+                let i = 0;
+                i < 45;
+                i++
+            ) {
+
+                setTimeout(
+                    createHeart,
+                    i * 50
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CONTINUOUS HEARTS
+        ===================================================== */
+
+        setInterval(
+            createHeart,
+            850
+        );
+
+
+        /* =====================================================
+           SPARKLES
+        ===================================================== */
+
+        function createSparkle() {
+
+            const sparkle =
+                document.createElement(
+                    "div"
+                );
+
+
+            sparkle.className =
+                "sparkle";
+
+
+            sparkle.style.left =
+                Math.random() * 100 +
+                "vw";
+
+
+            sparkle.style.top =
+                Math.random() * 100 +
+                "vh";
+
+
+            sparkle.style.animationDelay =
+                Math.random() * 2 +
+                "s";
+
+
+            document.body.appendChild(
+                sparkle
+            );
+
+        }
+
+
+        for (
+            let i = 0;
+            i < 35;
+            i++
+        ) {
+
+            createSparkle();
+
+        }
+
+
+        /* =====================================================
+           MUSIC
+        ===================================================== */
+
+        let musicPlaying = false;
+
+        musicBtn.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    music.children.length === 0
+                ) {
+
+                    alert(
+                        "Music add karne ke liye " +
+                        "same folder me music.mp3 rakho " +
+                        "aur HTML me audio source uncomment karo ❤️"
+                    );
+
+                    return;
+
+                }
+
+
+                if (!musicPlaying) {
+
+                    music.play();
+
+                    musicBtn.innerText =
+                        "🔊";
+
+                    musicPlaying = true;
+
+                }
+
+                else {
+
+                    music.pause();
+
+                    musicBtn.innerText =
+                        "🎵";
+
+                    musicPlaying = false;
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
