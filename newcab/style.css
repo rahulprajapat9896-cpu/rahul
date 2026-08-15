@@ -1,0 +1,898 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+
+  --dark: #0f172a;
+
+  --blue: #1d4ed8;
+
+  --gold: #f59e0b;
+
+  --green: #16a34a;
+
+  --light: #f8fafc;
+
+  --border: #e2e8f0;
+
+  --text: #1e293b;
+
+  --muted: #64748b;
+
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: var(--light);
+
+  color: var(--text);
+
+  line-height: 1.5;
+
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+
+  background: var(--dark);
+
+  color: white;
+
+  padding: 9px 6%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 14px;
+
+}
+
+
+.top-bar a {
+
+  color: #fbbf24;
+
+  font-weight: bold;
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+  height: 72px;
+
+  background: white;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+
+}
+
+
+.nav-container {
+
+  height: 100%;
+
+  padding: 0 6%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+.logo {
+
+  font-size: 25px;
+
+  font-weight: 900;
+
+  color: var(--dark);
+
+}
+
+
+.logo i {
+
+  color: var(--gold);
+
+}
+
+
+.logo span {
+
+  color: var(--blue);
+
+}
+
+
+.nav-links {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+}
+
+
+.nav-links a {
+
+  color: var(--dark);
+
+  font-weight: 700;
+
+}
+
+
+.nav-links a:hover {
+
+  color: var(--blue);
+
+}
+
+
+.nav-call {
+
+  background: var(--gold);
+
+  color: white !important;
+
+  padding: 11px 18px;
+
+  border-radius: 30px;
+
+}
+
+
+.mobile-toggle {
+
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+  min-height: 720px;
+
+  padding: 70px 6%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 60px;
+
+  align-items: center;
+
+  background:
+
+    linear-gradient(
+
+      135deg,
+
+      #eff6ff,
+
+      white
+
+    );
+
+}
+
+
+.hero-left h1 {
+
+  font-size: 58px;
+
+  line-height: 1.05;
+
+  margin: 15px 0;
+
+}
+
+
+.hero-left h1 span {
+
+  color: var(--blue);
+
+}
+
+
+.hero-description {
+
+  color: var(--muted);
+
+  font-size: 18px;
+
+  max-width: 600px;
+
+}
+
+
+.small-title {
+
+  color: var(--blue);
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  font-size: 13px;
+
+}
+
+
+.hero-points {
+
+  margin-top: 30px;
+
+}
+
+
+.hero-points div {
+
+  margin: 12px 0;
+
+  font-weight: 700;
+
+}
+
+
+.hero-points i {
+
+  color: var(--green);
+
+  margin-right: 8px;
+
+}
+
+
+/* =========================
+   BOOKING CARD
+========================= */
+
+.booking-card {
+
+  background: white;
+
+  padding: 28px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 45px rgba(15,23,42,0.12);
+
+  border: 1px solid var(--border);
+
+}
+
+
+.booking-card h2 {
+
+  margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   VEHICLE TABS
+========================= */
+
+.vehicle-tabs {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 8px;
+
+  margin-bottom: 18px;
+
+}
+
+
+.vehicle-tab {
+
+  border: 1px solid var(--border);
+
+  background: #f8fafc;
+
+  padding: 14px 8px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+}
+
+
+.vehicle-tab:hover {
+
+  border-color: var(--blue);
+
+}
+
+
+.vehicle-tab.active {
+
+  background: var(--dark);
+
+  color: white;
+
+  border-color: var(--dark);
+
+}
+
+
+/* =========================
+   VEHICLE INFO
+========================= */
+
+.vehicle-info {
+
+  background: #eff6ff;
+
+  color: #1e3a8a;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  margin-bottom: 18px;
+
+}
+
+
+.vehicle-info strong {
+
+  font-size: 18px;
+
+}
+
+
+.vehicle-info small {
+
+  display: block;
+
+  margin-top: 3px;
+
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+
+  margin-bottom: 15px;
+
+}
+
+
+.form-group label {
+
+  display: block;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  margin-bottom: 6px;
+
+}
+
+
+.form-group label i {
+
+  color: var(--blue);
+
+}
+
+
+.form-group input {
+
+  width: 100%;
+
+  padding: 13px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  font-size: 15px;
+
+  outline: none;
+
+}
+
+
+.form-group input:focus {
+
+  border-color: var(--blue);
+
+  box-shadow: 0 0 0 3px rgba(29,78,216,0.1);
+
+}
+
+
+.two-column {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+
+}
+
+
+/* =========================
+   FARE
+========================= */
+
+.fare-box {
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 10px;
+
+  padding: 16px;
+
+  background: #f8fafc;
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  margin: 15px 0;
+
+}
+
+
+.fare-box div {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.fare-box small {
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+}
+
+
+.fare-box strong {
+
+  font-size: 18px;
+
+}
+
+
+.fare-note {
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.submit-button {
+
+  width: 100%;
+
+  border: none;
+
+  background: var(--green);
+
+  color: white;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+}
+
+
+.submit-button:hover {
+
+  background: #15803d;
+
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+
+  padding: 80px 6%;
+
+  text-align: center;
+
+}
+
+
+.section h2 {
+
+  font-size: 36px;
+
+  margin: 8px 0 35px;
+
+}
+
+
+/* =========================
+   VEHICLE CARDS
+========================= */
+
+.vehicle-cards {
+
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 25px;
+
+}
+
+
+.vehicle-card {
+
+  background: white;
+
+  border: 1px solid var(--border);
+
+  padding: 30px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+
+}
+
+
+.vehicle-icon {
+
+  font-size: 55px;
+
+  margin-bottom: 10px;
+
+}
+
+
+.vehicle-card h3 {
+
+  font-size: 24px;
+
+}
+
+
+.vehicle-card p {
+
+  color: var(--muted);
+
+  margin: 10px 0 15px;
+
+}
+
+
+/* =========================
+   ROUTES
+========================= */
+
+.routes {
+
+  background: #eef2ff;
+
+}
+
+
+.route-grid {
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 15px;
+
+}
+
+
+.route-grid div {
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  font-weight: 800;
+
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+
+  background: var(--dark);
+
+  color: white;
+
+  text-align: center;
+
+  padding: 70px 6%;
+
+}
+
+
+.contact h2 {
+
+  font-size: 36px;
+
+}
+
+
+.contact p {
+
+  color: #cbd5e1;
+
+  margin: 8px 0 20px;
+
+}
+
+
+.contact a {
+
+  display: inline-block;
+
+  padding: 13px 22px;
+
+  margin: 5px;
+
+  border-radius: 30px;
+
+  background: var(--green);
+
+  color: white;
+
+  font-weight: 800;
+
+}
+
+
+.contact a:last-child {
+
+  background: var(--gold);
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+  text-align: center;
+
+  padding: 22px;
+
+  background: #020617;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+  .top-bar {
+
+    padding: 8px 4%;
+
+    font-size: 11px;
+
+  }
+
+
+  .nav-container {
+
+    padding: 0 4%;
+
+  }
+
+
+  .mobile-toggle {
+
+    display: block;
+
+  }
+
+
+  .nav-links {
+
+    display: none;
+
+    position: absolute;
+
+    top: 72px;
+
+    left: 0;
+
+    right: 0;
+
+    background: white;
+
+    padding: 20px 5%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+  }
+
+
+  .nav-links.open {
+
+    display: flex;
+
+  }
+
+
+  .hero {
+
+    grid-template-columns: 1fr;
+
+    padding: 45px 4%;
+
+  }
+
+
+  .hero-left h1 {
+
+    font-size: 42px;
+
+  }
+
+
+  .booking-card {
+
+    padding: 20px;
+
+  }
+
+
+  .two-column {
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+  }
+
+
+  .fare-box {
+
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+
+  .fare-box div:last-child {
+
+    grid-column: 1 / -1;
+
+  }
+
+
+  .vehicle-cards {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .route-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}

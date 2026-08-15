@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rahul Cabs & Car Rentals</title>
+
+  <meta name="description"
+    content="Book Cars, Buses and Bikes with Rahul Cabs. Easy booking with WhatsApp confirmation.">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ================= TOP BAR ================= -->
+
+  <div class="top-bar">
+    <div>
+      <i class="fa-solid fa-clock"></i>
+      24x7 Taxi Booking Service
+    </div>
+
+    <a href="tel:+919518239069">
+      <i class="fa-solid fa-phone"></i>
+      +91-9518239069
+    </a>
+  </div>
+
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="navbar">
+
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+        <i class="fa-solid fa-taxi"></i>
+        Rahul<span>Cabs</span>
+      </a>
+
+      <!-- MOBILE MENU BUTTON -->
+
+      <button id="mobileToggle" class="mobile-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+
+      <!-- NAV LINKS -->
+
+      <div id="navLinks" class="nav-links">
+
+        <a href="#booking">Home</a>
+
+        <a href="#vehicles">Vehicles</a>
+
+        <a href="#routes">Routes</a>
+
+        <a href="#contact">Contact</a>
+
+        <a href="tel:+919518239069" class="nav-call">
+          <i class="fa-solid fa-phone"></i>
+          Call Rahul
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="booking">
+
+    <div class="hero-left">
+
+      <p class="small-title">
+        SAFE • COMFORTABLE • RELIABLE
+      </p>
+
+      <h1>
+        Book Your
+        <span>Ride</span>
+        Easily
+      </h1>
+
+      <p class="hero-description">
+        Book Cars, Buses and Bikes easily.
+        Enter your complete trip details and
+        send the booking request directly to
+        Rahul on WhatsApp.
+      </p>
+
+      <div class="hero-points">
+
+        <div>
+          <i class="fa-solid fa-circle-check"></i>
+          Transparent Pricing
+        </div>
+
+        <div>
+          <i class="fa-solid fa-circle-check"></i>
+          Professional Drivers
+        </div>
+
+        <div>
+          <i class="fa-solid fa-circle-check"></i>
+          WhatsApp Booking Confirmation
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= BOOKING CARD ================= -->
+
+    <div class="booking-card">
+
+      <h2>
+        <i class="fa-solid fa-calendar-check"></i>
+        Book Your Vehicle
+      </h2>
+
+
+      <!-- VEHICLE SELECT -->
+
+      <div class="vehicle-tabs">
+
+        <button
+          type="button"
+          class="vehicle-tab active"
+          data-vehicle="car">
+
+          🚗 Car
+
+        </button>
+
+
+        <button
+          type="button"
+          class="vehicle-tab"
+          data-vehicle="bus">
+
+          🚌 Bus
+
+        </button>
+
+
+        <button
+          type="button"
+          class="vehicle-tab"
+          data-vehicle="bike">
+
+          🏍️ Bike
+
+        </button>
+
+      </div>
+
+
+      <!-- VEHICLE INFORMATION -->
+
+      <div id="vehicleInfo" class="vehicle-info">
+      </div>
+
+
+      <!-- ================= FORM ================= -->
+
+      <form id="bookingForm">
+
+        <!-- NAME -->
+
+        <div class="form-group">
+
+          <label>
+            <i class="fa-solid fa-user"></i>
+            Full Name *
+          </label>
+
+          <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your full name"
+            required>
+
+        </div>
+
+
+        <!-- MOBILE -->
+
+        <div class="form-group">
+
+          <label>
+            <i class="fa-solid fa-phone"></i>
+            Mobile Number *
+          </label>
+
+          <input
+            type="tel"
+            id="customerPhone"
+            placeholder="10 digit mobile number"
+            maxlength="10"
+            inputmode="numeric"
+            required>
+
+        </div>
+
+
+        <!-- PICKUP -->
+
+        <div class="form-group">
+
+          <label>
+            <i class="fa-solid fa-location-dot"></i>
+            Pickup Location *
+          </label>
+
+          <input
+            type="text"
+            id="pickup"
+            placeholder="Enter pickup location"
+            required>
+
+        </div>
+
+
+        <!-- DESTINATION -->
+
+        <div class="form-group">
+
+          <label>
+            <i class="fa-solid fa-location-crosshairs"></i>
+            Destination *
+          </label>
+
+          <input
+            type="text"
+            id="destination"
+            placeholder="Enter destination"
+            required>
+
+        </div>
+
+
+        <!-- DATE -->
+
+        <div class="two-column">
+
+          <div class="form-group">
+
+            <label>
+              <i class="fa-solid fa-calendar"></i>
+              Travel Date *
+            </label>
+
+            <input
+              type="date"
+              id="date"
+              required>
+
+          </div>
+
+
+          <!-- TIME -->
+
+          <div class="form-group">
+
+            <label>
+              <i class="fa-solid fa-clock"></i>
+              Pickup Time *
+            </label>
+
+            <input
+              type="time"
+              id="time"
+              required>
+
+          </div>
+
+        </div>
+
+
+        <!-- DISTANCE -->
+
+        <div class="two-column">
+
+          <div class="form-group">
+
+            <label>
+              <i class="fa-solid fa-road"></i>
+              Distance (KM) *
+            </label>
+
+            <input
+              type="number"
+              id="distance"
+              placeholder="Example: 250"
+              min="1"
+              required>
+
+          </div>
+
+
+          <!-- PASSENGERS -->
+
+          <div class="form-group">
+
+            <label>
+              <i class="fa-solid fa-users"></i>
+              Passengers *
+            </label>
+
+            <input
+              type="number"
+              id="passengers"
+              value="1"
+              min="1"
+              required>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================= FARE ================= -->
+
+        <div class="fare-box">
+
+          <div>
+
+            <small>Vehicle</small>
+
+            <strong id="selectedVehicle">
+              Car
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <small>Rate</small>
+
+            <strong>
+              ₹<span id="rate">12</span>/km
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <small>Estimated Fare</small>
+
+            <strong>
+              ₹<span id="fare">0</span>
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="fare-note">
+
+          <i class="fa-solid fa-circle-info"></i>
+
+          Final fare will be confirmed by Rahul.
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          type="submit"
+          class="submit-button">
+
+          <i class="fa-brands fa-whatsapp"></i>
+
+          Confirm Booking & Send WhatsApp
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= VEHICLES ================= -->
+
+  <section class="section" id="vehicles">
+
+    <p class="small-title">
+      OUR VEHICLES
+    </p>
+
+    <h2>
+      Choose Your Vehicle
+    </h2>
+
+
+    <div class="vehicle-cards">
+
+
+      <!-- CAR -->
+
+      <div class="vehicle-card">
+
+        <div class="vehicle-icon">
+          🚗
+        </div>
+
+        <h3>
+          Car
+        </h3>
+
+        <p>
+          Comfortable Sedan and SUV
+          for local and outstation trips.
+        </p>
+
+        <strong>
+          ₹12 / km
+        </strong>
+
+      </div>
+
+
+      <!-- BUS -->
+
+      <div class="vehicle-card">
+
+        <div class="vehicle-icon">
+          🚌
+        </div>
+
+        <h3>
+          Bus
+        </h3>
+
+        <p>
+          Bus service for family trips,
+          groups and tours.
+        </p>
+
+        <strong>
+          ₹30 / km
+        </strong>
+
+      </div>
+
+
+      <!-- BIKE -->
+
+      <div class="vehicle-card">
+
+        <div class="vehicle-icon">
+          🏍️
+        </div>
+
+        <h3>
+          Bike
+        </h3>
+
+        <p>
+          Economical bike option
+          for individual travel.
+        </p>
+
+        <strong>
+          ₹8 / km
+        </strong>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ROUTES ================= -->
+
+  <section class="section routes" id="routes">
+
+    <p class="small-title">
+      POPULAR SERVICES
+    </p>
+
+    <h2>
+      Travel With Rahul Cabs
+    </h2>
+
+
+    <div class="route-grid">
+
+      <div>
+        Delhi → Jaipur
+      </div>
+
+      <div>
+        Delhi → Chandigarh
+      </div>
+
+      <div>
+        Delhi → Agra
+      </div>
+
+      <div>
+        Delhi → Shimla
+      </div>
+
+      <div>
+        Local City Booking
+      </div>
+
+      <div>
+        Airport Transfer
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section class="contact" id="contact">
+
+    <h2>
+      Need Instant Booking?
+    </h2>
+
+    <p>
+      Contact Rahul directly for confirmation.
+    </p>
+
+
+    <a
+      href="https://wa.me/919518239069"
+      target="_blank">
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+      WhatsApp Rahul
+
+    </a>
+
+
+    <a href="tel:+919518239069">
+
+      <i class="fa-solid fa-phone"></i>
+
+      +91-9518239069
+
+    </a>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <p>
+      © 2026 Rahul Cabs & Car Rentals.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>

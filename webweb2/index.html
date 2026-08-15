@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rahul Cabs & Car Rentals | Premium Outstation & City Taxi Service</title>
+  <meta name="description" content="Book comfortable outstation cabs, one-way taxis, local hourly rentals, and airport transfers at transparent rates. Clean cars, verified drivers, 24x7 helpline.">
+  <meta name="keywords" content="Cab Booking, Outstation Taxi, One Way Cab, Car Rental, Airport Taxi, Rahul Cabs, City Taxi Service">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. TOP BAR
+       ========================================== -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-flex">
+        <div>
+          <span><i class="fa-solid fa-clock"></i> 24x7 Taxi Booking Service Across India</span>
+        </div>
+        <div>
+          <span>Helpline & Support: </span>
+          <a href="tel:+919518239069" class="contact-quick-link"><i class="fa-solid fa-phone"></i> +91-9518239069 (Rahul)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       2. MAIN NAVBAR
+       ========================================== -->
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon"><i class="fa-solid fa-taxi"></i></div>
+        <div>Rahul<span>Cabs</span></div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#booking" class="active">Home</a>
+        <a href="#outstation">Outstation Cabs</a>
+        <a href="#fleet">Our Fleet</a>
+        <a href="#routes">Popular Routes</a>
+        <a href="#features">Why Us</a>
+        <a href="tel:+919518239069" class="btn-call-nav"><i class="fa-solid fa-phone"></i> Call +91-9518239069</a>
+      </div>
+
+      <button class="mobile-nav-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       3. HERO SECTION & BOOKING ENGINE
+       ========================================== -->
+  <section class="hero-section" id="booking">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Hero Text -->
+        <div class="hero-text">
+          <h1>Reliable & Comfortable <span>Car Rentals</span> For Your Next Journey</h1>
+          <p>Book one-way outstation cabs, round trips, local hourly rentals, and airport transfers with guaranteed lowest fares, doorstep pickup, and professional drivers.</p>
+          
+          <div class="hero-features-list">
+            <div class="hero-feature-item">
+              <i class="fa-solid fa-circle-check"></i> Zero Hidden Charges & Transparent Toll Billing
+            </div>
+            <div class="hero-feature-item">
+              <i class="fa-solid fa-circle-check"></i> Sanitized Air-Conditioned Cars with Expert Drivers
+            </div>
+            <div class="hero-feature-item">
+              <i class="fa-solid fa-circle-check"></i> Instant Booking Confirmation & 24/7 Support
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Widget Form -->
+        <div class="booking-card">
+          <div class="booking-tabs">
+            <button class="booking-tab-btn active" data-trip="one-way">One Way</button>
+            <button class="booking-tab-btn" data-trip="round">Round Trip</button>
+            <button class="booking-tab-btn" data-trip="local">Local Hourly</button>
+            <button class="booking-tab-btn" data-trip="airport">Airport Drop</button>
+          </div>
+
+          <form class="booking-form" id="cabBookingForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>From Pickup City</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <input type="text" class="form-control" id="pickupCity" placeholder="Enter Pickup City (e.g. Delhi)" required>
+                </div>
+              </div>
+
+              <div class="form-group" id="dropCityGroup">
+                <label>To Destination City</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-location-crosshairs"></i>
+                  <input type="text" class="form-control" id="dropCity" placeholder="Enter Destination (e.g. Jaipur)" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Pickup Date</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  <input type="date" class="form-control" id="pickupDate" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Pickup Time</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-clock"></i>
+                  <input type="time" class="form-control" id="pickupTime" required>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-search-cabs">
+              <i class="fa-solid fa-magnifying-glass"></i> Estimate Fare & Find Cabs
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. VEHICLE FLEET SHOWCASE
+       ========================================== -->
+  <section class="fleet-section" id="fleet">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Choose Your Ride</span>
+        <h2 class="section-title">Our Premium Fleet Categories</h2>
+      </div>
+
+      <div class="fleet-grid">
+        
+        <!-- Fleet Item 1: Hatchback -->
+        <div class="fleet-card">
+          <span class="fleet-badge">Best Budget</span>
+          <div class="fleet-icon-wrapper">
+            <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 50 L35 30 L85 30 L110 50 L130 50 C135 50 140 55 140 60 L140 65 L0 65 L0 60 C0 55 5 50 10 50 Z" fill="#0f172a"/>
+              <circle cx="35" cy="65" r="12" fill="#f59e0b"/>
+              <circle cx="105" cy="65" r="12" fill="#f59e0b"/>
+            </svg>
+          </div>
+          <h3 class="fleet-title">Compact Hatchback</h3>
+          <p class="fleet-models">WagonR, Indica, Celerio or equivalent</p>
+          <div class="fleet-features">
+            <div class="fleet-feature"><i class="fa-solid fa-user-group" style="color:var(--primary-blue)"></i> 4 Seats</div>
+            <div class="fleet-feature"><i class="fa-solid fa-suitcase" style="color:var(--primary-blue)"></i> 2 Bags</div>
+            <div class="fleet-feature"><i class="fa-solid fa-snowflake" style="color:var(--primary-blue)"></i> Air Conditioned</div>
+            <div class="fleet-feature"><i class="fa-solid fa-shield" style="color:var(--primary-blue)"></i> Cleaned & Sanitized</div>
+          </div>
+          <div class="fleet-price-box">
+            <div class="fleet-price">₹ 10 <span>/ km</span></div>
+            <button class="btn-book-sm" onclick="alert('Selected Hatchback! Filling search details above...')">Select</button>
+          </div>
+        </div>
+
+        <!-- Fleet Item 2: Sedan -->
+        <div class="fleet-card">
+          <span class="fleet-badge" style="background:#eff6ff; color:#1e40af">Most Popular</span>
+          <div class="fleet-icon-wrapper">
+            <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 50 L40 25 L95 25 L115 50 L135 50 C138 50 140 54 140 58 L140 65 L0 65 L0 58 C0 54 2 50 5 50 Z" fill="#1e3a8a"/>
+              <circle cx="35" cy="65" r="12" fill="#f59e0b"/>
+              <circle cx="105" cy="65" r="12" fill="#f59e0b"/>
+            </svg>
+          </div>
+          <h3 class="fleet-title">Executive Sedan</h3>
+          <p class="fleet-models">Swift Dzire, Toyota Etios or equivalent</p>
+          <div class="fleet-features">
+            <div class="fleet-feature"><i class="fa-solid fa-user-group" style="color:var(--primary-blue)"></i> 4 Seats</div>
+            <div class="fleet-feature"><i class="fa-solid fa-suitcase" style="color:var(--primary-blue)"></i> 3 Bags</div>
+            <div class="fleet-feature"><i class="fa-solid fa-snowflake" style="color:var(--primary-blue)"></i> Air Conditioned</div>
+            <div class="fleet-feature"><i class="fa-solid fa-gas-pump" style="color:var(--primary-blue)"></i> Extra Boot Space</div>
+          </div>
+          <div class="fleet-price-box">
+            <div class="fleet-price">₹ 12 <span>/ km</span></div>
+            <button class="btn-book-sm" onclick="alert('Selected Sedan! Filling search details above...')">Select</button>
+          </div>
+        </div>
+
+        <!-- Fleet Item 3: SUV -->
+        <div class="fleet-card">
+          <span class="fleet-badge" style="background:#fef3c7; color:#b45309">Family & Groups</span>
+          <div class="fleet-icon-wrapper">
+            <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 50 L30 20 L100 20 L125 50 L140 50 C140 50 140 60 140 65 L0 65 L0 60 Z" fill="#091121"/>
+              <circle cx="35" cy="65" r="13" fill="#f59e0b"/>
+              <circle cx="105" cy="65" r="13" fill="#f59e0b"/>
+            </svg>
+          </div>
+          <h3 class="fleet-title">Family SUV</h3>
+          <p class="fleet-models">Maruti Ertiga, Kia Carens or equivalent</p>
+          <div class="fleet-features">
+            <div class="fleet-feature"><i class="fa-solid fa-user-group" style="color:var(--primary-blue)"></i> 6-7 Seats</div>
+            <div class="fleet-feature"><i class="fa-solid fa-suitcase" style="color:var(--primary-blue)"></i> 4 Bags</div>
+            <div class="fleet-feature"><i class="fa-solid fa-snowflake" style="color:var(--primary-blue)"></i> Dual AC</div>
+            <div class="fleet-feature"><i class="fa-solid fa-chair" style="color:var(--primary-blue)"></i> Extra Legroom</div>
+          </div>
+          <div class="fleet-price-box">
+            <div class="fleet-price">₹ 16 <span>/ km</span></div>
+            <button class="btn-book-sm" onclick="alert('Selected SUV! Filling search details above...')">Select</button>
+          </div>
+        </div>
+
+        <!-- Fleet Item 4: Premium SUV -->
+        <div class="fleet-card">
+          <span class="fleet-badge" style="background:#f3e8ff; color:#7e22ce">Premium Comfort</span>
+          <div class="fleet-icon-wrapper">
+            <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 50 L25 18 L105 18 L130 50 L140 50 C140 50 140 62 140 65 L0 65 L0 62 Z" fill="#4338ca"/>
+              <circle cx="35" cy="65" r="14" fill="#f59e0b"/>
+              <circle cx="105" cy="65" r="14" fill="#f59e0b"/>
+            </svg>
+          </div>
+          <h3 class="fleet-title">Luxury SUV (Innova)</h3>
+          <p class="fleet-models">Toyota Innova Crysta / Hycross</p>
+          <div class="fleet-features">
+            <div class="fleet-feature"><i class="fa-solid fa-user-group" style="color:var(--primary-blue)"></i> 7 Seats</div>
+            <div class="fleet-feature"><i class="fa-solid fa-suitcase" style="color:var(--primary-blue)"></i> 5 Bags</div>
+            <div class="fleet-feature"><i class="fa-solid fa-couch" style="color:var(--primary-blue)"></i> Captain Seats</div>
+            <div class="fleet-feature"><i class="fa-solid fa-crown" style="color:var(--primary-blue)"></i> Top Luxury Comfort</div>
+          </div>
+          <div class="fleet-price-box">
+            <div class="fleet-price">₹ 19 <span>/ km</span></div>
+            <button class="btn-book-sm" onclick="alert('Selected Innova Crysta! Filling search details above...')">Select</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. WHY CHOOSE US
+       ========================================== -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Why Travel With Us</span>
+        <h2 class="section-title">The Rahul Cabs Advantage</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-receipt"></i></div>
+          <h4>Transparent Billing</h4>
+          <p>No hidden charges or surprise tolls. All fare breakdowns are clear before you start your trip.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-user-check"></i></div>
+          <h4>Verified Chauffeurs</h4>
+          <p>Courteous, background-verified drivers with years of highway driving experience for safe travel.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <h4>On-Time Guarantee</h4>
+          <p>Doorstep pickup right on schedule. We value your time and ensure seamless journeys.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+          <h4>24x7 Customer Support</h4>
+          <p>Need assistance during your ride? Call our direct helpline anytime at +91-9518239069.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. POPULAR ROUTES TARIFF CARDS
+       ========================================== -->
+  <section class="routes-section" id="routes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Popular Destinations</span>
+        <h2 class="section-title">Trending Outstation Routes</h2>
+      </div>
+
+      <div class="routes-grid">
+        
+        <div class="route-card">
+          <div class="route-info">
+            <h5>Delhi to Jaipur Taxi</h5>
+            <p>One-Way (~280 km) | Est. Time: 4.5 hrs</p>
+          </div>
+          <div class="route-price">
+            <span class="val">₹ 2,999</span>
+            <span style="font-size: 0.75rem; color:#64748b;">All Inclusive</span>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-info">
+            <h5>Delhi to Agra Taxi</h5>
+            <p>One-Way (~240 km) | Est. Time: 3.5 hrs</p>
+          </div>
+          <div class="route-price">
+            <span class="val">₹ 2,499</span>
+            <span style="font-size: 0.75rem; color:#64748b;">All Inclusive</span>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-info">
+            <h5>Delhi to Chandigarh Taxi</h5>
+            <p>One-Way (~250 km) | Est. Time: 4.0 hrs</p>
+          </div>
+          <div class="route-price">
+            <span class="val">₹ 2,699</span>
+            <span style="font-size: 0.75rem; color:#64748b;">All Inclusive</span>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-info">
+            <h5>Mumbai to Pune Taxi</h5>
+            <p>One-Way (~150 km) | Est. Time: 3.0 hrs</p>
+          </div>
+          <div class="route-price">
+            <span class="val">₹ 2,199</span>
+            <span style="font-size: 0.75rem; color:#64748b;">All Inclusive</span>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-info">
+            <h5>Bangalore to Mysore Taxi</h5>
+            <p>One-Way (~145 km) | Est. Time: 2.5 hrs</p>
+          </div>
+          <div class="route-price">
+            <span class="val">₹ 1,999</span>
+            <span style="font-size: 0.75rem; color:#64748b;">All Inclusive</span>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-info">
+            <h5>Delhi to Shimla Taxi</h5>
+            <p>One-Way (~350 km) | Est. Time: 7.0 hrs</p>
+          </div>
+          <div class="route-price">
+            <span class="val">₹ 4,499</span>
+            <span style="font-size: 0.75rem; color:#64748b;">All Inclusive</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       7. CONTACT CALLOUT BANNER
+       ========================================== -->
+  <section class="contact-banner">
+    <div class="container">
+      <div class="contact-flex">
+        <div class="contact-text">
+          <h3>Need Instant Booking Or Custom Package?</h3>
+          <p>Speak directly with our booking representative <strong>Rahul</strong> for immediate cab confirmation.</p>
+        </div>
+        <div class="contact-btn-box">
+          <a href="tel:+919518239069" class="btn-call-lg">
+            <i class="fa-solid fa-phone"></i> Call +91-9518239069
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       8. FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div>
+          <h4 style="color:#fff; font-size:1.2rem; font-weight:800; margin-bottom:14px;">Rahul Cabs & Rentals</h4>
+          <p style="line-height:1.6; margin-bottom:16px;">
+            Your trusted partner for hassle-free outstation taxi bookings, city rides, and airport drop services. Safe, punctual, and transparent travel across India.
+          </p>
+          <div style="color:#fbbf24; font-weight:700;">
+            <i class="fa-solid fa-headset"></i> Booking Contact: Rahul (+91-9518239069)
+          </div>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#booking">One-Way Outstation Taxi</a></li>
+            <li><a href="#booking">Round Trip Cabs</a></li>
+            <li><a href="#booking">Local Hourly Packages</a></li>
+            <li><a href="#booking">Airport Transfer Cabs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#fleet">Our Vehicle Fleet</a></li>
+            <li><a href="#routes">Popular Travel Routes</a></li>
+            <li><a href="#features">Why Choose Us</a></li>
+            <li><a href="tel:+919518239069">Instant Call Helpline</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact Representative</h4>
+          <p style="margin-bottom:10px;"><i class="fa-solid fa-user" style="color:var(--accent-gold)"></i> <strong>Manager:</strong> Rahul</p>
+          <p style="margin-bottom:10px;"><i class="fa-solid fa-phone" style="color:var(--accent-gold)"></i> <strong>Phone:</strong> +91-9518239069</p>
+          <p style="margin-bottom:10px;"><i class="fa-solid fa-envelope" style="color:var(--accent-gold)"></i> <strong>Email:</strong> support@rahulcabs.com</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 Rahul Cabs & Car Rentals. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Booking Window -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h4>Booking Estimation & Confirmation</h4>
+        <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+      </div>
+      <div id="modalBodyContent">
+        <!-- Dynamic JS Content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
