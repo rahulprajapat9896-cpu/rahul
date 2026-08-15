@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>India — A Journey Through Freedom</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <div class="topbar">
+        <div class="brand">
+            <span>🇮🇳</span>
+            INDIA
+        </div>
+
+        <button id="soundBtn" aria-label="Toggle music">
+            🔊
+        </button>
+    </div>
+
+    <div class="page-info">
+        <span id="currentPage">01</span>
+        <span class="line"></span>
+        <span id="totalPages">01</span>
+    </div>
+
+    <div class="navigation">
+
+        <button id="prevBtn">←</button>
+
+        <div id="dots"></div>
+
+        <button id="nextBtn">→</button>
+
+    </div>
+
+    <audio id="music" loop preload="auto">
+        <source src="patriotic.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #000;
+    color: #fff;
+
+    font-family: "Montserrat", sans-serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    background-size: cover;
+    background-position: center;
+
+    animation: pageIn 1.2s ease both;
+}
+
+@keyframes pageIn {
+
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* dark cinematic overlay */
+
+.page::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.88) 0%,
+            rgba(0,0,0,.60) 45%,
+            rgba(0,0,0,.35) 100%
+        );
+
+}
+
+
+/* bottom cinematic gradient */
+
+.page::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 35vh;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.9)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: min(1150px, 90%);
+
+    margin-left: 8%;
+
+}
+
+
+.eyebrow {
+
+    color: #ff9933;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
+
+}
+
+
+.title {
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(55px, 9vw, 145px);
+
+    line-height: .9;
+
+    font-weight: 800;
+
+    letter-spacing: -5px;
+
+    text-transform: uppercase;
+
+    max-width: 1000px;
+
+    text-shadow:
+        0 15px 60px rgba(0,0,0,.8);
+
+}
+
+
+.subtitle {
+
+    margin-top: 28px;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(20px, 3vw, 38px);
+
+    letter-spacing: 5px;
+
+    font-weight: 600;
+
+}
+
+
+.description {
+
+    max-width: 720px;
+
+    margin-top: 30px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: rgba(255,255,255,.82);
+
+}
+
+
+.tricolor {
+
+    display: flex;
+
+    width: 160px;
+
+    height: 4px;
+
+    margin-top: 30px;
+
+}
+
+.tricolor span {
+
+    flex: 1;
+
+}
+
+.orange {
+    background: #ff9933;
+}
+
+.white {
+    background: #fff;
+}
+
+.green {
+    background: #138808;
+}
+
+
+/* =========================
+   HERO FLAG
+========================= */
+
+.flag {
+
+    width: 180px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.6);
+
+}
+
+
+.flag div {
+
+    height: 35px;
+
+}
+
+.flag .orange {
+    background: #ff9933;
+}
+
+.flag .white {
+    background: #fff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.flag .green {
+    background: #138808;
+}
+
+
+.chakra {
+
+    width: 26px;
+    height: 26px;
+
+    border: 3px solid #000080;
+
+    border-radius: 50%;
+
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    max-width: 1050px;
+
+    margin-top: 40px;
+
+}
+
+
+.card {
+
+    position: relative;
+
+    min-height: 210px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95),
+            rgba(0,0,0,.1)
+        ),
+        var(--image);
+
+    background-size: cover;
+
+    background-position: center;
+
+    border: 1px solid rgba(255,255,255,.18);
+
+    transition: .5s;
+
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.03);
+
+    border-color: #ff9933;
+
+}
+
+
+.card-number {
+
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    color: rgba(255,255,255,.6);
+
+    font-size: 12px;
+
+}
+
+
+.card h3 {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 25px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.card p {
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: rgba(255,255,255,.75);
+
+}
+
+
+.card strong {
+
+    color: #ff9933;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.explore {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 28px;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    background: rgba(0,0,0,.25);
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s;
+
+}
+
+
+.explore:hover {
+
+    background: white;
+
+    color: black;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+
+    position: fixed;
+
+    top: 28px;
+    left: 35px;
+    right: 35px;
+
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.brand {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+}
+
+
+.brand span {
+
+    margin-right: 8px;
+
+}
+
+
+#soundBtn {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    background: rgba(0,0,0,.35);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+/* =========================
+   PAGE NUMBER
+========================= */
+
+.page-info {
+
+    position: fixed;
+
+    right: 35px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 100;
+
+    writing-mode: vertical-rl;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.page-info .line {
+
+    width: 1px;
+
+    height: 80px;
+
+    background: rgba(255,255,255,.5);
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+
+    position: fixed;
+
+    left: 8%;
+
+    bottom: 35px;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.navigation button {
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.45);
+
+    background: rgba(0,0,0,.35);
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s;
+
+}
+
+
+.navigation button:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+#dots {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.35);
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.dot.active {
+
+    background: #ff9933;
+
+    transform: scale(1.5);
+
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+}
+
+
+.particle {
+
+    position: absolute;
+
+    bottom: -10px;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: .5;
+
+    animation: float 8s linear infinite;
+
+}
+
+
+@keyframes float {
+
+    from {
+
+        transform:
+            translateY(0)
+            scale(.5);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: .7;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            scale(1.2);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:800px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .page {
+
+        min-height: 100vh;
+
+        height: auto;
+
+        padding:
+            110px 20px 120px;
+
+    }
+
+    .content {
+
+        margin-left: 0;
+
+        width: 100%;
+
+    }
+
+    .title {
+
+        font-size: clamp(45px, 15vw, 80px);
+
+        letter-spacing: -2px;
+
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .card {
+
+        min-height: 200px;
+
+    }
+
+    .page-info {
+
+        display: none;
+
+    }
+
+    .navigation {
+
+        left: 20px;
+
+        bottom: 20px;
+
+    }
+
+    .topbar {
+
+        left: 20px;
+        right: 20px;
+
+    }
+
+}
