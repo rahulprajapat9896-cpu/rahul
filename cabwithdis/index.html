@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rahul Cabs & Car Rentals | Cab Booking</title>
+
+    <meta name="description"
+        content="Rahul Cabs - One Way, Round Trip, Local, Airport, Luxury Cars, SUVs, Bikes, Tempo Traveller and Bus booking service.">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+    <div class="top-bar">
+
+        <div class="container top-flex">
+
+            <span>
+                <i class="fa-solid fa-clock"></i>
+                24x7 Taxi Booking Service
+            </span>
+
+            <a href="tel:+919518239069">
+                <i class="fa-solid fa-phone"></i>
+                +91-9518239069
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="container nav-flex">
+
+            <a href="#booking" class="logo">
+
+                <i class="fa-solid fa-taxi"></i>
+
+                Rahul<span>Cabs</span>
+
+            </a>
+
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="#booking">
+                    Home
+                </a>
+
+                <a href="#vehicles">
+                    Vehicles
+                </a>
+
+                <a href="#booking">
+                    Book Now
+                </a>
+
+                <a href="#features">
+                    Why Us
+                </a>
+
+                <a href="tel:+919518239069" class="call-btn">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Call
+
+                </a>
+
+            </div>
+
+
+            <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+     HERO
+===================================================== -->
+
+    <section class="hero">
+
+        <div class="container hero-grid">
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <span class="hero-small">
+                    PREMIUM TRAVEL SERVICE
+                </span>
+
+
+                <h1>
+
+                    Book Your
+                    <span>Perfect Ride</span>
+
+                </h1>
+
+
+                <p>
+
+                    Cars, SUVs, Luxury Cars, Bikes,
+                    Tempo Travellers, Mini Buses and
+                    Buses — all in one place.
+
+                </p>
+
+
+                <div class="hero-points">
+
+                    <div>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Transparent Pricing
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Professional Drivers
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        24x7 Booking Support
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Automatic Road Distance
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+         BOOKING CARD
+    ================================================= -->
+
+            <div class="booking-card" id="booking">
+
+
+                <h2>
+
+                    <i class="fa-solid fa-car"></i>
+
+                    Book Your Ride
+
+                </h2>
+
+
+                <p class="booking-subtitle">
+
+                    Select trip type and enter your journey details.
+
+                </p>
+
+
+
+                <!-- =================================================
+           BOOKING FORM
+      ================================================= -->
+
+                <form id="cabBookingForm">
+
+
+                    <!-- TRIP TYPE -->
+
+                    <div class="trip-tabs">
+
+                        <button type="button" class="trip-btn active" data-trip="one-way">
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                            One Way
+
+                        </button>
+
+
+                        <button type="button" class="trip-btn" data-trip="round">
+
+                            <i class="fa-solid fa-arrows-left-right"></i>
+
+                            Round Trip
+
+                        </button>
+
+
+                        <button type="button" class="trip-btn" data-trip="local">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Local
+
+                        </button>
+
+
+                        <button type="button" class="trip-btn" data-trip="airport">
+
+                            <i class="fa-solid fa-plane"></i>
+
+                            Airport
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+             CUSTOMER NAME
+        ================================================= -->
+
+                    <div class="form-group">
+
+                        <label for="customerName">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Full Name
+
+                        </label>
+
+
+                        <input type="text" id="customerName" placeholder="Enter your full name" autocomplete="name"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+             MOBILE
+        ================================================= -->
+
+                    <div class="form-group">
+
+                        <label for="customerMobile">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            Mobile Number
+
+                        </label>
+
+
+                        <input type="tel" id="customerMobile" placeholder="10 digit mobile number" inputmode="numeric"
+                            pattern="[0-9]{10}" maxlength="10" autocomplete="tel" required>
+
+
+                        <small>
+
+                            Example: 9518239069
+
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+             PASSENGERS
+        ================================================= -->
+
+                    <div class="form-group">
+
+                        <label for="passengers">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            Number of Passengers
+
+                        </label>
+
+
+                        <input type="number" id="passengers" min="1" max="50" value="1" required>
+
+
+                        <small>
+
+                            Vehicle options automatically
+                            change according to passenger count.
+
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+             PICKUP / DESTINATION
+        ================================================= -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="pickupCity">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                Pickup Location
+
+                            </label>
+
+
+                            <input type="text" id="pickupCity" placeholder="Delhi / Kaithal / Chandigarh"
+                                autocomplete="off" required>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="dropCity">
+
+                                <i class="fa-solid fa-location-crosshairs"></i>
+
+                                Destination
+
+                            </label>
+
+
+                            <input type="text" id="dropCity" placeholder="Jaipur / Delhi / Shimla" autocomplete="off"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+             DATE / TIME
+        ================================================= -->
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="pickupDate">
+
+                                <i class="fa-solid fa-calendar"></i>
+
+                                Pickup Date
+
+                            </label>
+
+
+                            <input type="date" id="pickupDate" required>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="pickupTime">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                Pickup Time
+
+                            </label>
+
+
+                            <input type="time" id="pickupTime" required>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+             INFO
+        ================================================= -->
+
+                    <div class="booking-info">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        <span id="tripInfo">
+
+                            One Way: Road distance will be
+                            calculated automatically.
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+             SUBMIT
+        ================================================= -->
+
+                    <button type="submit" class="main-book-btn">
+
+                        <i class="fa-solid fa-route"></i>
+
+                        Find Distance & Vehicles
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     VEHICLES
+===================================================== -->
+
+    <section class="vehicles-section" id="vehicles">
+
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span>
+                    OUR FLEET
+                </span>
+
+
+                <h2>
+                    Choose Your Vehicle
+                </h2>
+
+
+                <p>
+
+                    Cars, SUVs, Luxury Cars,
+                    Bikes, Travellers and Buses.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- JS WILL GENERATE VEHICLES -->
+
+            <div id="vehicleList" class="vehicle-grid">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     FEATURES
+===================================================== -->
+
+    <section class="features" id="features">
+
+
+        <div class="container feature-grid">
+
+
+            <div class="feature">
+
+                <i class="fa-solid fa-route"></i>
+
+                <h3>
+                    Automatic KM
+                </h3>
+
+                <p>
+
+                    Road distance is calculated
+                    automatically.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                <h3>
+                    Clear Fare
+                </h3>
+
+                <p>
+
+                    See estimated fare before
+                    confirming your booking.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>
+                    Passenger Based
+                </h3>
+
+                <p>
+
+                    Vehicles are filtered according
+                    to passenger capacity.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="feature">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                <h3>
+                    WhatsApp Booking
+                </h3>
+
+                <p>
+
+                    Send complete booking details
+                    directly to Rahul.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     BOOKING MODAL
+===================================================== -->
+
+    <div class="modal" id="bookingModal" aria-hidden="true">
+
+
+        <div class="modal-box" role="dialog" aria-modal="true">
+
+
+            <button type="button" class="modal-close" id="modalClose" aria-label="Close">
+
+                &times;
+
+            </button>
+
+
+            <div id="modalContent">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+     FOOTER
+===================================================== -->
+
+    <footer>
+
+
+        <div class="container footer-content">
+
+
+            <!-- ABOUT -->
+
+            <div>
+
+                <h2>
+
+                    <i class="fa-solid fa-taxi"></i>
+
+                    Rahul Cabs
+
+                </h2>
+
+
+                <p>
+
+                    Cars, Bikes, Luxury Vehicles,
+                    Tempo Travellers, Mini Buses
+                    and Bus booking service.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+
+                <p>
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Rahul
+
+                </p>
+
+
+                <p>
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <a href="tel:+919518239069" style="color:inherit;text-decoration:none;">
+
+                        +91-9518239069
+
+                    </a>
+
+                </p>
+
+
+                <p>
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    WhatsApp Booking Available
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            © 2026 Rahul Cabs & Car Rentals.
+            All Rights Reserved.
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

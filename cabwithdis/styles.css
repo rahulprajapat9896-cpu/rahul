@@ -1,0 +1,1998 @@
+/* =========================================================
+   RAHUL CABS
+   COMPLETE RESPONSIVE CSS
+   One Way | Round Trip | Local | Airport
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --blue: #0f172a;
+    --blue-dark: #020617;
+    --blue2: #1e3a8a;
+
+    --gold: #f59e0b;
+    --gold-dark: #d97706;
+    --gold-light: #fef3c7;
+
+    --light: #f8fafc;
+    --white: #ffffff;
+
+    --text: #1e293b;
+    --text-light: #334155;
+    --muted: #64748b;
+
+    --green: #16a34a;
+    --whatsapp: #25d366;
+    --red: #ef4444;
+
+    --border: #e2e8f0;
+
+    --shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    --shadow-lg:
+        0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--light);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    line-height: 1.5;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.top-bar {
+    background: var(--blue-dark);
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar span,
+.top-bar a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.top-bar a:hover {
+    color: var(--gold);
+}
+
+.top-bar i {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    background: var(--white);
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+.nav-flex {
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* LOGO */
+
+.logo {
+    text-decoration: none;
+
+    color: var(--blue);
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+.logo i {
+    color: var(--gold);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: var(--text-light);
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--gold-dark);
+}
+
+
+/* CALL BUTTON */
+
+.call-btn {
+    background: var(--gold);
+
+    color: white !important;
+
+    padding: 11px 18px;
+
+    border-radius: 25px;
+
+    transition: 0.2s;
+}
+
+.call-btn:hover {
+    background: var(--gold-dark);
+}
+
+
+/* MOBILE BUTTON */
+
+.mobile-toggle {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--blue);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    padding: 5px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    padding: 70px 0;
+
+    background:
+        linear-gradient(135deg,
+            #0f172a 0%,
+            #172554 50%,
+            #1e3a8a 100%);
+
+    color: white;
+}
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 480px;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+/* HERO CONTENT */
+
+.hero-small {
+    color: #fbbf24;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: 55px;
+
+    line-height: 1.05;
+
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #fbbf24;
+}
+
+.hero-content p {
+    color: #cbd5e1;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+}
+
+
+/* HERO POINTS */
+
+.hero-points {
+    margin-top: 25px;
+
+    display: grid;
+
+    gap: 13px;
+}
+
+.hero-points div {
+    display: flex;
+
+    align-items: center;
+}
+
+.hero-points i {
+    color: #22c55e;
+
+    margin-right: 8px;
+
+    min-width: 18px;
+}
+
+
+/* =========================================================
+   BOOKING CARD
+   ========================================================= */
+
+.booking-card {
+    background: white;
+
+    color: var(--text);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
+
+    width: 100%;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.booking-card h2 {
+    font-size: 24px;
+
+    line-height: 1.3;
+}
+
+.booking-subtitle {
+    color: var(--muted);
+
+    margin: 5px 0 20px;
+}
+
+
+/* =========================================================
+   TRIP TABS
+   ========================================================= */
+
+.trip-tabs {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 6px;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+.trip-btn {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    border: 1px solid var(--border);
+
+    padding: 11px 6px;
+
+    min-height: 44px;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    position: relative;
+
+    z-index: 21;
+
+    pointer-events: auto;
+
+    user-select: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.trip-btn:hover {
+    border-color: var(--gold);
+
+    color: var(--gold-dark);
+}
+
+.trip-btn:active {
+    transform: scale(0.97);
+}
+
+.trip-btn.active {
+    background: var(--blue);
+
+    border-color: var(--blue);
+
+    color: white;
+}
+
+.trip-btn.active:hover {
+    background: var(--blue-dark);
+
+    color: white;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+.form-group label i {
+    color: var(--gold);
+
+    margin-right: 4px;
+}
+
+.form-control,
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: white;
+
+    color: var(--text);
+
+    transition: 0.2s;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--blue2);
+
+    box-shadow:
+        0 0 0 3px rgba(30, 58, 138, 0.10);
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.form-group small {
+    color: var(--muted);
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+/* BOOK BUTTON */
+
+.main-book-btn {
+    width: 100%;
+
+    border: 0;
+
+    padding: 15px;
+
+    background: var(--gold);
+
+    color: white;
+
+    border-radius: 9px;
+
+    font-weight: 800;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.main-book-btn:hover {
+    background: var(--gold-dark);
+
+    transform: translateY(-1px);
+}
+
+.main-book-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   VEHICLES SECTION
+   ========================================================= */
+
+.vehicles-section {
+    padding: 70px 0;
+
+    background: var(--light);
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.section-heading span {
+    color: var(--gold);
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+
+    margin: 10px 0;
+
+    line-height: 1.2;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+
+/* VEHICLE GRID */
+
+.vehicle-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* VEHICLE CARD */
+
+.vehicle-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    transition: 0.2s;
+
+    overflow: hidden;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+.vehicle-icon {
+    height: 100px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 60px;
+
+    color: var(--blue2);
+}
+
+.vehicle-card h3 {
+    margin: 10px 0;
+
+    font-size: 20px;
+}
+
+.vehicle-info {
+    color: var(--muted);
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+.vehicle-rate {
+    font-size: 22px;
+
+    font-weight: 900;
+
+    color: var(--gold);
+}
+
+.vehicle-rate small {
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.vehicle-capacity {
+    margin-top: 8px;
+
+    font-weight: 700;
+
+    color: var(--text-light);
+}
+
+.vehicle-capacity i {
+    color: var(--blue2);
+
+    margin-right: 4px;
+}
+
+
+/* SELECT VEHICLE */
+
+.select-vehicle {
+    width: 100%;
+
+    border: 0;
+
+    padding: 12px;
+
+    background: var(--blue);
+
+    color: white;
+
+    border-radius: 8px;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    font-weight: 800;
+
+    transition: 0.2s;
+}
+
+.select-vehicle:hover {
+    background: var(--blue2);
+
+    transform: translateY(-1px);
+}
+
+.select-vehicle:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features {
+    padding: 60px 0;
+
+    background: white;
+}
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.feature {
+    text-align: center;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+}
+
+.feature:hover {
+    background: #f8fafc;
+
+    transform: translateY(-3px);
+}
+
+.feature i {
+    font-size: 35px;
+
+    color: var(--gold);
+
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: var(--muted);
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    z-index: 9999;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    background: white;
+
+    max-width: 650px;
+
+    width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.35);
+
+    animation:
+        modalOpen 0.2s ease;
+}
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* MODAL CLOSE */
+
+.modal-close {
+    position: absolute;
+
+    right: 15px;
+
+    top: 12px;
+
+    border: 0;
+
+    background: white;
+
+    color: #334155;
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    background: #f1f5f9;
+
+    color: var(--red);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading-distance {
+    text-align: center;
+
+    padding: 35px 10px;
+}
+
+.loading-distance i {
+    font-size: 45px;
+
+    color: var(--gold);
+
+    margin-bottom: 20px;
+}
+
+.loading-distance h2 {
+    margin-bottom: 10px;
+
+    line-height: 1.3;
+}
+
+.loading-distance p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.error-box {
+    text-align: center;
+
+    padding: 30px 10px;
+}
+
+.error-box i {
+    font-size: 45px;
+
+    color: var(--red);
+
+    margin-bottom: 15px;
+}
+
+.error-box h2 {
+    margin-bottom: 10px;
+}
+
+.error-box p {
+    color: var(--muted);
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   DISTANCE RESULT
+   ========================================================= */
+
+.distance-result {
+    text-align: center;
+
+    background: #eff6ff;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+.distance-result p {
+    color: var(--muted);
+
+    line-height: 1.5;
+}
+
+.distance-result strong {
+    display: block;
+
+    font-size: 30px;
+
+    color: var(--blue2);
+
+    margin: 5px 0;
+}
+
+
+/* =========================================================
+   ROUND TRIP
+   ========================================================= */
+
+.round-trip-info {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    background: #fff7ed;
+
+    color: #c2410c;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    margin: 8px 0;
+
+    font-size: 14px;
+
+    flex-wrap: wrap;
+}
+
+.round-trip-info strong {
+    display: inline;
+
+    font-size: 16px;
+
+    color: #c2410c;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   MODAL SUBTITLE
+   ========================================================= */
+
+.modal-subtitle {
+    color: var(--muted);
+
+    margin: 8px 0 20px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MODAL VEHICLES
+   ========================================================= */
+
+.modal-vehicles {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.modal-vehicle {
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition: 0.2s;
+}
+
+.modal-vehicle:hover {
+    border-color: var(--gold);
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.modal-vehicle>div:first-child {
+    min-width: 0;
+}
+
+.modal-vehicle-info {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+.modal-rate {
+    color: var(--gold-dark);
+
+    font-weight: 800;
+
+    margin-top: 5px;
+}
+
+.modal-fare {
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+.modal-fare strong {
+    display: block;
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+}
+
+
+/* FINAL SELECT */
+
+.select-final,
+.local-select {
+    border: 0;
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.select-final:hover,
+.local-select:hover {
+    background: var(--blue2);
+}
+
+
+/* =========================================================
+   LOCAL PACKAGES
+   ========================================================= */
+
+.local-packages {
+    display: grid;
+
+    gap: 18px;
+}
+
+.local-package {
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    padding: 17px;
+
+    background: white;
+}
+
+.package-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+.package-header h3 {
+    font-size: 18px;
+}
+
+.package-header span {
+    background: #eff6ff;
+
+    color: var(--blue2);
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* LOCAL VEHICLES */
+
+.local-vehicles {
+    display: grid;
+
+    gap: 8px;
+}
+
+.local-vehicle {
+    background: #f8fafc;
+
+    border-radius: 9px;
+
+    padding: 11px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.local-vehicle>div:first-child {
+    min-width: 0;
+}
+
+.local-vehicle small {
+    display: block;
+
+    color: var(--muted);
+
+    margin-top: 3px;
+}
+
+.local-vehicle span {
+    display: block;
+
+    color: var(--gold-dark);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-top: 3px;
+}
+
+.local-vehicle>div:last-child {
+    text-align: right;
+
+    white-space: nowrap;
+}
+
+.local-vehicle>div:last-child strong {
+    margin-right: 7px;
+}
+
+
+/* =========================================================
+   SELECTED SUMMARY
+   ========================================================= */
+
+.selected-summary {
+    background: #f8fafc;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    margin: 15px 0;
+
+    border: 1px solid var(--border);
+}
+
+.selected-summary p {
+    padding: 5px 0;
+
+    line-height: 1.5;
+}
+
+.selected-summary strong {
+    color: var(--blue);
+}
+
+.selected-summary>small {
+    color: var(--muted);
+
+    display: block;
+
+    margin-top: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* FARE */
+
+.estimated-fare {
+    font-size: 22px !important;
+
+    font-weight: 900;
+
+    color: var(--gold-dark);
+
+    border-top: 1px solid var(--border);
+
+    margin-top: 10px;
+
+    padding-top: 15px !important;
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.whatsapp-btn {
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    background: var(--whatsapp);
+
+    color: white;
+
+    padding: 14px;
+
+    border: 0;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: 900;
+
+    margin-top: 15px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.whatsapp-btn:hover {
+    background: var(--green);
+
+    transform: translateY(-1px);
+}
+
+.whatsapp-btn i {
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   CALL OWNER
+   ========================================================= */
+
+.call-owner {
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    background: var(--blue);
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: 900;
+
+    margin-top: 10px;
+
+    transition: 0.2s;
+}
+
+.call-owner:hover {
+    background: var(--blue2);
+}
+
+.call-owner i {
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   NO VEHICLE
+   ========================================================= */
+
+.no-vehicle {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
+}
+
+.no-vehicle h3 {
+    margin-bottom: 8px;
+}
+
+.no-vehicle p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: var(--blue-dark);
+
+    color: #cbd5e1;
+
+    padding-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 40px;
+}
+
+.footer-content h2 {
+    color: white;
+
+    margin-bottom: 15px;
+}
+
+.footer-content h2 i {
+    color: var(--gold);
+}
+
+.footer-content h3 {
+    color: white;
+
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    line-height: 1.7;
+}
+
+.footer-content a {
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.footer-content a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    text-align: center;
+
+    border-top: 1px solid #1e293b;
+
+    padding: 20px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hero-grid {
+        grid-template-columns:
+            minmax(0, 1fr) 430px;
+
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+    }
+
+    .vehicle-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .hero-points {
+        text-align: left;
+
+        max-width: 430px;
+
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+    .booking-card {
+        max-width: 650px;
+
+        margin: auto;
+    }
+
+    .vehicle-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 72px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 15px;
+
+        box-shadow:
+            0 10px 20px rgba(0, 0, 0, 0.10);
+
+        z-index: 999;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 13px;
+
+        text-align: center;
+    }
+
+    .call-btn {
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 94%;
+    }
+
+
+    /* TOP BAR */
+
+    .top-bar {
+        font-size: 12px;
+
+        padding: 8px 0;
+    }
+
+    .top-flex {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 6px;
+    }
+
+
+    /* NAV */
+
+    .nav-flex {
+        min-height: 65px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        top: 65px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+
+    /* BOOKING */
+
+    .booking-card {
+        padding: 18px;
+
+        border-radius: 14px;
+    }
+
+    .booking-card h2 {
+        font-size: 21px;
+    }
+
+
+    /* TRIP */
+
+    .trip-tabs {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .trip-btn {
+        min-height: 44px;
+
+        font-size: 13px;
+    }
+
+
+    /* FORM */
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 12px;
+    }
+
+
+    /* VEHICLES */
+
+    .vehicles-section {
+        padding: 50px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .vehicle-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* FEATURES */
+
+    .features {
+        padding: 45px 0;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* MODAL */
+
+    .modal {
+        padding: 10px;
+
+        align-items: flex-start;
+    }
+
+    .modal-box {
+        margin-top: 20px;
+
+        max-height: 92vh;
+
+        padding: 22px 16px;
+
+        border-radius: 14px;
+    }
+
+    .modal-box h2 {
+        font-size: 21px;
+
+        padding-right: 30px;
+    }
+
+
+    /* MODAL VEHICLE */
+
+    .modal-vehicle {
+        padding: 12px;
+    }
+
+    .modal-vehicle-info {
+        font-size: 11px;
+    }
+
+    .modal-fare strong {
+        font-size: 16px;
+    }
+
+    .select-final {
+        padding: 7px 10px;
+
+        font-size: 12px;
+    }
+
+
+    /* LOCAL */
+
+    .package-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .package-header span {
+        align-self: flex-start;
+    }
+
+
+    .local-vehicle {
+        align-items: flex-start;
+    }
+
+    .local-vehicle>div:last-child {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-end;
+
+        gap: 6px;
+    }
+
+    .local-vehicle>div:last-child strong {
+        margin-right: 0;
+    }
+
+
+    /* FARE */
+
+    .estimated-fare {
+        font-size: 19px !important;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding-top: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding-bottom: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-small {
+        font-size: 12px;
+    }
+
+    .booking-card {
+        padding: 15px;
+    }
+
+    .trip-btn {
+        font-size: 12px;
+
+        padding: 9px 3px;
+    }
+
+    .vehicle-card {
+        padding: 17px;
+    }
+
+    .vehicle-icon {
+        height: 80px;
+
+        font-size: 50px;
+    }
+
+    .modal-vehicle {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .modal-fare {
+        text-align: left;
+    }
+
+    .modal-fare strong {
+        display: inline-block;
+
+        margin-right: 8px;
+    }
+
+    .local-vehicle {
+        flex-direction: column;
+    }
+
+    .local-vehicle>div:last-child {
+        width: 100%;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .booking-card {
+        padding: 13px;
+    }
+
+    .trip-tabs {
+        gap: 5px;
+    }
+
+    .trip-btn {
+        font-size: 11px;
+    }
+
+    .modal-box {
+        padding: 20px 12px;
+    }
+
+    .modal-close {
+        right: 8px;
+
+        top: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / TOUCH
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(245, 158, 11, 0.35);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
