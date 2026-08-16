@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday My Love ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MUSIC -->
+    <audio id="birthdayMusic" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MUSIC BUTTON -->
+    <button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+    <!-- FLOATING HEARTS -->
+    <div id="hearts"></div>
+
+    <!-- ================= PAGE 1 ================= -->
+
+    <section class="page active" id="page1">
+
+        <div class="container">
+
+            <div class="big-heart">❤️</div>
+
+            <h1>Happy Birthday</h1>
+
+            <h2>My Beautiful Love 💕</h2>
+
+            <p>
+                Today isn't just another day...
+                <br>
+                It's the day the most beautiful person in my life was born. 🥹❤️
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                Start The Surprise 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 2 ================= -->
+
+    <section class="page" id="page2">
+
+        <div class="container">
+
+            <h1>🌹 Birthday Wishes 🌹</h1>
+
+            <p class="wish">
+
+                I wish that every morning of your life
+                begins with a beautiful smile. 😊
+
+                <br><br>
+
+                I wish that every dream you have
+                slowly becomes reality. ✨
+
+                <br><br>
+
+                And most importantly...
+
+                <br><br>
+
+                I wish that I always get the chance
+                to see you happy. ❤️
+
+            </p>
+
+            <button class="next-btn" onclick="nextPage()">
+                There's More ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 3 ================= -->
+
+    <section class="page" id="page3">
+
+        <div class="container">
+
+            <h1>🎵 A Little Music For You</h1>
+
+            <div class="music-card">
+
+                <div class="music-disc">
+                    🎶
+                </div>
+
+                <h2>Our Birthday Song</h2>
+
+                <p>
+                    Close your eyes...
+                    <br>
+                    Listen to the music...
+                    <br>
+                    And think about us. ❤️
+                </p>
+
+                <button class="next-btn" onclick="nextPage()">
+                    Our Memories 📸
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 4 ================= -->
+
+    <section class="page" id="page4">
+
+        <div class="container">
+
+            <h1>📸 Our Beautiful Memories</h1>
+
+            <p>
+                Every picture has a story...
+                and every story has you. ❤️
+            </p>
+
+            <div class="gallery">
+
+                <div class="photo">
+                    <img src="photo1.jpg">
+                </div>
+
+                <div class="photo">
+                    <img src="photo2.jpg">
+                </div>
+
+                <div class="photo">
+                    <img src="photo3.jpg">
+                </div>
+
+                <div class="photo">
+                    <img src="photo4.jpg">
+                </div>
+
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                Cake Time 🎂
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 5 ================= -->
+
+    <section class="page" id="page5">
+
+        <div class="container">
+
+            <h1>🎂 Your Birthday Cake</h1>
+
+            <p>
+                Make a wish before blowing the candles... ❤️
+            </p>
+
+            <div class="cake">
+
+                <div class="candle">
+                    <div class="flame" id="flame">🔥</div>
+                </div>
+
+                <div class="top-layer"></div>
+
+                <div class="middle-layer"></div>
+
+                <div class="bottom-layer"></div>
+
+            </div>
+
+            <button class="cake-btn" onclick="cutCake()">
+                🎂 Cut The Cake
+            </button>
+
+            <p id="cakeMessage"></p>
+
+            <button class="next-btn hidden" id="cakeNext" onclick="nextPage()">
+                Make A Wish ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 6 ================= -->
+
+    <section class="page fireworks-page" id="page6">
+
+        <canvas id="fireworks"></canvas>
+
+        <div class="container fireworks-text">
+
+            <h1>✨ Make A Wish ✨</h1>
+
+            <p>
+                May every wish you make tonight
+                come true. ❤️
+            </p>
+
+            <div class="stars">
+                ✨ 🌟 ✨ 🌟 ✨
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                One Last Surprise 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 7 ================= -->
+
+    <section class="page" id="page7">
+
+        <div class="container">
+
+            <h1>💌 A Letter For You</h1>
+
+            <button class="letter-btn" onclick="openLetter()">
+                💌 Open My Letter
+            </button>
+
+            <div class="letter hidden" id="letter">
+
+                <h2>To My Love ❤️</h2>
+
+                <p>
+
+                    My love,
+
+                    <br><br>
+
+                    I don't know if words will ever be enough
+                    to explain how special you are to me.
+
+                    <br><br>
+
+                    You are one of the most beautiful parts
+                    of my life.
+
+                    <br><br>
+
+                    Your smile makes my bad days better.
+                    Your presence makes ordinary moments special.
+
+                    <br><br>
+
+                    On your birthday, I just want you to know...
+
+                    <br><br>
+
+                    I am grateful for you.
+                    I care about you.
+                    I admire you.
+
+                    <br><br>
+
+                    And I hope this new year of your life
+                    brings you endless happiness.
+
+                    <br><br>
+
+                    Happy Birthday, my love. ❤️
+
+                    <br><br>
+
+                    Always yours,
+                    <br>
+                    ❤️
+
+                </p>
+
+            </div>
+
+            <button class="next-btn" onclick="nextPage()">
+                Forever ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 8 ================= -->
+
+    <section class="page final-page" id="page8">
+
+        <div class="container">
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <h1>Happy Birthday My Love</h1>
+
+            <p>
+
+                Out of all the people in this world...
+
+                <br><br>
+
+                I'm lucky that I found YOU. ❤️
+
+                <br><br>
+
+                I hope we keep making memories,
+                laughing together,
+                fighting over silly things,
+                and loving each other.
+
+                <br><br>
+
+                Today, tomorrow,
+                and every day after that...
+
+                <br><br>
+
+                <strong>YOU WILL ALWAYS BE SPECIAL TO ME. ❤️</strong>
+
+            </p>
+
+            <h2>Forever & Always 💕</h2>
+
+            <div class="final-hearts">
+                ❤️ 💕 ❤️ 💕 ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
