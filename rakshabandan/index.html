@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Raksha Bandhan ❤️</title>
+
+    <meta
+        name="description"
+        content="A beautiful Raksha Bandhan celebration filled with memories, shayari, wishes and love."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MUSIC -->
+    <audio id="rakhiMusic" loop>
+        <source src="rakhi.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MUSIC BUTTON -->
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()">
+        🎵
+    </button>
+
+    <!-- FLOATING DECORATIONS -->
+    <div id="floatingDecor"></div>
+
+    <!-- HERO -->
+    <header class="hero">
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+
+            <div class="rakhi-symbol">🪢</div>
+
+            <p class="small-title">A Bond Beyond Words</p>
+
+            <h1>
+                Happy
+                <span>Raksha Bandhan</span>
+            </h1>
+
+            <p class="hero-text">
+                कुछ रिश्ते सिर्फ रिश्ते नहीं होते...
+                <br>
+                वो हमारी पूरी दुनिया होते हैं। ❤️
+            </p>
+
+            <button class="main-btn" onclick="scrollToSection('memories')">
+                💖 Begin Our Memories
+            </button>
+
+        </div>
+
+        <div class="scroll-down">
+            ↓
+        </div>
+
+    </header>
+
+
+    <!-- INTRO -->
+    <section class="intro section">
+
+        <div class="section-heading">
+
+            <span>💝 SPECIAL BOND</span>
+
+            <h2>
+                भाई-बहन का रिश्ता
+            </h2>
+
+            <p>
+                लड़ाई भी सबसे ज्यादा,
+                प्यार भी सबसे ज्यादा।
+                यही तो है भाई-बहन का रिश्ता।
+            </p>
+
+        </div>
+
+        <div class="bond-cards">
+
+            <div class="bond-card">
+                <div class="card-icon">😂</div>
+                <h3>Unlimited Fights</h3>
+                <p>
+                    छोटी-छोटी बातों पर लड़ना...
+                    और कुछ मिनट बाद फिर साथ बैठ जाना।
+                </p>
+            </div>
+
+            <div class="bond-card">
+                <div class="card-icon">❤️</div>
+                <h3>Unlimited Love</h3>
+                <p>
+                    चाहे कितना भी लड़ लें,
+                    मुश्किल वक्त में हमेशा साथ।
+                </p>
+            </div>
+
+            <div class="bond-card">
+                <div class="card-icon">🛡️</div>
+                <h3>Forever Protection</h3>
+                <p>
+                    दुनिया कुछ भी कहे,
+                    भाई-बहन हमेशा एक-दूसरे के साथ।
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RAKHI -->
+    <section class="rakhi-section section">
+
+        <div class="rakhi-container">
+
+            <div class="rakhi-visual">
+                <div class="rakhi-thread"></div>
+
+                <div class="rakhi-circle">
+                    <span>🪢</span>
+                </div>
+            </div>
+
+            <div class="rakhi-message">
+
+                <span class="eyebrow">THE PROMISE</span>
+
+                <h2>
+                    ये सिर्फ राखी नहीं...
+                </h2>
+
+                <p>
+                    ये एक छोटा सा धागा है,
+                    लेकिन इसमें बचपन की हजारों यादें,
+                    प्यार, भरोसा और जिंदगी भर साथ रहने का वादा छुपा है।
+                </p>
+
+                <div class="promise">
+                    <strong>🤝 मेरा वादा</strong>
+                    <p>
+                        चाहे जिंदगी हमें कितनी भी दूर ले जाए,
+                        हमारा रिश्ता हमेशा दिल के सबसे करीब रहेगा।
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMORIES -->
+    <section id="memories" class="memories section">
+
+        <div class="section-heading">
+
+            <span>📸 OUR MEMORIES</span>
+
+            <h2>
+                कुछ खूबसूरत यादें
+            </h2>
+
+            <p>
+                तस्वीरें पुरानी हो सकती हैं,
+                लेकिन उनसे जुड़ी यादें कभी पुरानी नहीं होतीं।
+            </p>
+
+        </div>
+
+        <div class="gallery">
+
+            <div class="photo-card">
+                <img src="photo1.jpg" alt="Memory 1">
+                <div class="photo-caption">
+                    <span>❤️</span>
+                    बचपन की यादें
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="photo2.jpg" alt="Memory 2">
+                <div class="photo-caption">
+                    <span>✨</span>
+                    साथ बिताए पल
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="photo3.jpg" alt="Memory 3">
+                <div class="photo-caption">
+                    <span>🥰</span>
+                    वो प्यारी मुस्कान
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="photo4.jpg" alt="Memory 4">
+                <div class="photo-caption">
+                    <span>💖</span>
+                    हमेशा साथ
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="photo5.jpg" alt="Memory 5">
+                <div class="photo-caption">
+                    <span>🌸</span>
+                    अनमोल पल
+                </div>
+            </div>
+
+            <div class="photo-card">
+                <img src="photo6.jpg" alt="Memory 6">
+                <div class="photo-caption">
+                    <span>🫶</span>
+                    Forever Bond
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SHAYARI -->
+    <section class="shayari-section section">
+
+        <div class="section-heading light">
+
+            <span>📝 DIL SE LIKHI SHAYARI</span>
+
+            <h2>
+                कुछ अल्फाज़ तुम्हारे नाम
+            </h2>
+
+        </div>
+
+        <div class="shayari-slider">
+
+            <div class="shayari-card active">
+                <span class="quote">“</span>
+                <p>
+                    दुनिया की भीड़ में सबसे खास है वो रिश्ता,
+                    <br>
+                    जिसमें लड़ाई भी हो और प्यार भी बेशुमार।
+                    <br>
+                    भाई-बहन का रिश्ता है ही ऐसा,
+                    <br>
+                    दूर रहकर भी रहता है दिल के पास।
+                </p>
+                <span class="quote bottom">”</span>
+            </div>
+
+            <div class="shayari-card">
+                <span class="quote">“</span>
+                <p>
+                    राखी का धागा सिर्फ कलाई नहीं सजाता,
+                    <br>
+                    ये दिलों को एक-दूसरे से जोड़ जाता है।
+                    <br>
+                    कितना भी दूर हो जाए भाई-बहन,
+                    <br>
+                    ये रिश्ता हमेशा पास बुलाता है।
+                </p>
+                <span class="quote bottom">”</span>
+            </div>
+
+            <div class="shayari-card">
+                <span class="quote">“</span>
+                <p>
+                    बचपन की वो नोक-झोंक याद आती है,
+                    <br>
+                    तेरी हर छोटी सी बात याद आती है।
+                    <br>
+                    आज बड़े हो गए हैं हम दोनों,
+                    <br>
+                    फिर भी वो बचपन की दोस्ती याद आती है।
+                </p>
+                <span class="quote bottom">”</span>
+            </div>
+
+            <div class="shayari-card">
+                <span class="quote">“</span>
+                <p>
+                    हजारों रिश्ते मिले इस जिंदगी में,
+                    <br>
+                    मगर भाई-बहन जैसा कोई रिश्ता नहीं।
+                    <br>
+                    इसमें शिकायतें भी हैं,
+                    <br>
+                    और बिना कहे समझने की आदत भी।
+                </p>
+                <span class="quote bottom">”</span>
+            </div>
+
+            <div class="shayari-card">
+                <span class="quote">“</span>
+                <p>
+                    तेरी खुशी मेरी खुशी बन जाती है,
+                    <br>
+                    तेरी परेशानी मेरी परेशानी बन जाती है।
+                    <br>
+                    यही तो है भाई-बहन का प्यार,
+                    <br>
+                    जो बिना कहे भी सब समझ जाता है।
+                </p>
+                <span class="quote bottom">”</span>
+            </div>
+
+        </div>
+
+        <div class="slider-buttons">
+
+            <button onclick="previousShayari()">❮</button>
+
+            <div id="shayariDots"></div>
+
+            <button onclick="nextShayari()">❯</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MANY SHAYARI -->
+    <section class="shayari-grid-section section">
+
+        <div class="section-heading">
+
+            <span>💌 MORE WORDS</span>
+
+            <h2>
+                दिल से निकली कुछ और बातें
+            </h2>
+
+        </div>
+
+        <div class="shayari-grid">
+
+            <article>
+                <span>🌸</span>
+                <p>
+                    रिश्ते बहुत मिलते हैं जिंदगी में,
+                    लेकिन भाई-बहन जैसा रिश्ता
+                    सिर्फ किस्मत वालों को मिलता है।
+                </p>
+            </article>
+
+            <article>
+                <span>❤️</span>
+                <p>
+                    तू लड़ती है तो अच्छा नहीं लगता,
+                    तू दूर जाती है तो अच्छा नहीं लगता,
+                    सच कहूं तो तेरे बिना
+                    ये घर भी घर जैसा नहीं लगता।
+                </p>
+            </article>
+
+            <article>
+                <span>🫶</span>
+                <p>
+                    बचपन साथ बिताया,
+                    सपने साथ देखे,
+                    लड़ाइयां भी साथ कीं,
+                    और खुशियां भी साथ मनाईं।
+                </p>
+            </article>
+
+            <article>
+                <span>✨</span>
+                <p>
+                    एक राखी के धागे में
+                    हजारों दुआएं बंधी हैं,
+                    भाई-बहन के इस रिश्ते में
+                    पूरी दुनिया की खुशियां बसी हैं।
+                </p>
+            </article>
+
+            <article>
+                <span>🥹</span>
+                <p>
+                    वक्त बदलता गया,
+                    हम बड़े होते गए,
+                    मगर तेरा मेरे लिए प्यार
+                    कभी छोटा नहीं हुआ।
+                </p>
+            </article>
+
+            <article>
+                <span>💝</span>
+                <p>
+                    ना कोई शर्त,
+                    ना कोई हिसाब,
+                    भाई-बहन का रिश्ता है
+                    बस प्यार ही प्यार।
+                </p>
+            </article>
+
+            <article>
+                <span>🌷</span>
+                <p>
+                    दूरियां चाहे कितनी भी हों,
+                    दिलों के रिश्ते दूर नहीं होते।
+                    सच्चे भाई-बहन कभी
+                    एक-दूसरे से अलग नहीं होते।
+                </p>
+            </article>
+
+            <article>
+                <span>🤗</span>
+                <p>
+                    कभी दोस्त,
+                    कभी दुश्मन,
+                    कभी सलाहकार,
+                    और हमेशा अपना।
+                    यही है भाई-बहन का प्यार।
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- LETTER -->
+    <section class="letter-section section">
+
+        <div class="letter-envelope" onclick="openLetter()">
+
+            <div class="envelope-top"></div>
+
+            <div class="envelope-body">
+
+                <div class="letter-icon">
+                    💌
+                </div>
+
+                <h3>
+                    एक चिट्ठी तुम्हारे लिए
+                </h3>
+
+                <p>
+                    Open this special letter
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="letter-content" id="letterContent">
+
+            <div class="letter-paper">
+
+                <button class="close-letter" onclick="closeLetter()">
+                    ×
+                </button>
+
+                <span class="letter-heart">❤️</span>
+
+                <h2>
+                    मेरे प्यारे भाई/बहन के नाम...
+                </h2>
+
+                <p>
+                    जिंदगी में बहुत से लोग आते हैं,
+                    कुछ थोड़े समय के लिए साथ रहते हैं,
+                    लेकिन भाई-बहन का रिश्ता ऐसा है
+                    जो जिंदगी भर साथ चलता है।
+                </p>
+
+                <p>
+                    हमने साथ में बहुत लड़ाइयां की हैं,
+                    एक-दूसरे को परेशान भी किया है,
+                    लेकिन सच ये है कि
+                    मैं दुनिया में किसी और के साथ
+                    ऐसा रिश्ता नहीं बदलना चाहूंगा।
+                </p>
+
+                <p>
+                    मेरी बस यही दुआ है कि तुम्हारी जिंदगी
+                    हमेशा खुशियों से भरी रहे।
+                    तुम्हारे चेहरे की मुस्कान कभी कम ना हो।
+                </p>
+
+                <p>
+                    Happy Raksha Bandhan! 🪢❤️
+                </p>
+
+                <div class="signature">
+                    हमेशा तुम्हारा ❤️
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SURPRISE -->
+    <section class="surprise-section section">
+
+        <div class="surprise-box">
+
+            <span>🎁</span>
+
+            <h2>
+                एक छोटा सा Surprise है...
+            </h2>
+
+            <p>
+                लेकिन इसे खोलने के लिए
+                तुम्हें एक button दबाना होगा।
+            </p>
+
+            <button class="surprise-btn" onclick="showSurprise()">
+                💝 Open Surprise
+            </button>
+
+        </div>
+
+        <div class="surprise-message" id="surpriseMessage">
+
+            <div class="surprise-heart">
+                ❤️
+            </div>
+
+            <h2>
+                तुम मेरे लिए बहुत Special हो!
+            </h2>
+
+            <p>
+                दुनिया चाहे कितनी भी बदल जाए,
+                हमारा रिश्ता हमेशा ऐसा ही रहेगा।
+            </p>
+
+            <strong>
+                Happy Raksha Bandhan! 🪢
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="final-section">
+
+        <div class="final-content">
+
+            <div class="big-rakhi">
+                🪢
+            </div>
+
+            <h2>
+                हमेशा खुश रहना ❤️
+            </h2>
+
+            <p>
+                Happy Raksha Bandhan
+            </p>
+
+            <div class="final-hearts">
+                ❤️ 🧡 💛 💚 💙 💜
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            Made with ❤️ for the most special sibling.
+        </p>
+
+        <p class="footer-small">
+            © 2026 Raksha Bandhan Memories
+        </p>
+
+    </footer>
+    <footer class="creator-footer">
+        <p>✨ Edited with ❤️ by <strong>Rahul Prajapat</strong> ✨</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
